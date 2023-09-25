@@ -179,7 +179,7 @@ const handsInstance = new p5((hands) => {
     hands.draw = () => {
         if (WorkHands.isWorking) {
             ImgHands.to_screen.loadPixels();
-            hands.i = (WorkHands.work_index - 3600 < 0) ? 0 : WorkHands.work_index - 3600;
+            hands.i = (WorkHands.work_index - 1840 < 0) ? 0 : WorkHands.work_index - 1840;
             while (hands.i < WorkHands.work_index) {
                 ImgHands.to_screen.pixels[hands.i] = hands.map(WorkHands.pcm[hands.i], -1.0, 1.0, 0, 255);
                 hands.i++;
