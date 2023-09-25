@@ -4,12 +4,12 @@
 
 const Gif = {
     paths: [
-        "./data/gif/terrorGif.mp4",
-        "./data/gif/naoGif.mp4",
-        "./data/gif/monkGif.mp4",
-        "./data/gif/eqGif.mp4",
-        "./data/gif/flautaGif.mp4",
-        "./data/gif/estampaGif.mp4"
+        "./video/data/gif/terrorGif.mp4",
+        "./video/data/gif/naoGif.mp4",
+        "./video/data/gif/monkGif.mp4",
+        "./video/data/gif/eqGif.mp4",
+        "./video/data/gif/flautaGif.mp4",
+        "./video/data/gif/estampaGif.mp4"
     ],
     gif: []
 };
@@ -50,14 +50,14 @@ const VideoTerror = {
         `PRECEDENTES <div id="precedentes_terror"/></div>`
     ],
     videoPath: [
-        "./data/mp4/fps.mp4",
-        "./data/mp4/descobrimento.mp4",
-        "./data/mp4/peste.mp4",
-        "./data/mp4/sobreAmerica.mp4",
-        "./data/mp4/band.mp4",
+        "./video/data/mp4/fps.mp4",
+        "./video/data/mp4/descobrimento.mp4",
+        "./video/data/mp4/peste.mp4",
+        "./video/data/mp4/sobreAmerica.mp4",
+        "./video/data/mp4/band.mp4",
     ],
     audioPath: [
-        "./data/mp3/terrorAudio_0.mp3"
+        "./video/data/mp3/terrorAudio_0.mp3"
     ],
     order: [
         "title",
@@ -156,7 +156,7 @@ const VideoNao = {
     title: "NÃO",
     subtitle: [],
     videoPath: [
-        "./data/mp4/nao.mp4"
+        "./video/data/mp4/nao.mp4"
     ],
     audioPath: [],
     order: [
@@ -183,10 +183,10 @@ const VideoMonk = {
     title: "SORT( ) MONK",
     subtitle: [],
     videoPath: [
-        "./data/mp4/monk.mp4"
+        "./video/data/mp4/monk.mp4"
     ],
     audioPath: [
-        "./data/mp3/monkAudio_0.mp3"
+        "./video/data/mp3/monkAudio_0.mp3"
     ],
     order: [
         "title",
@@ -224,8 +224,8 @@ const VideoEq = {
         "MOEDAPOEMA"
     ],
     videoPath: [
-        "./data/mp4/eq.mp4",
-        "./data/mp4/moedaPoema.mp4"
+        "./video/data/mp4/eq.mp4",
+        "./video/data/mp4/moedaPoema.mp4"
     ],
     audioPath: [],
     order: [
@@ -281,7 +281,7 @@ const VideoMaiakovski = {
     title: "FLAUTA-VÉRTEBRA",
     subtitle: [],
     videoPath: [
-        "./data/mp4/flautaVertebra.mp4"
+        "./video/data/mp4/flautaVertebra.mp4"
     ],
     audioPath: [],
     order: [
@@ -341,8 +341,8 @@ const VideoEstampa = {
     title: "ESTAMPA",
     subtitle: [],
     videoPath: [
-        "./data/mp4/bruxa.mp4",
-        "./data/mp4/estampa.mp4"
+        "./video/data/mp4/bruxa.mp4",
+        "./video/data/mp4/estampa.mp4"
     ],
     audioPath: [],
     order: [

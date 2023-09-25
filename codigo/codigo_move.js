@@ -54,12 +54,12 @@ controlMovement = () => {
 
 const ImgMove = {
     paths: new Array(
-        "./data/move_0.png",
-        "./data/move_1.png",
-        "./data/move_2.png",
-        "./data/move_3.png",
-        "./data/move_4.png",
-        "./data/move_5.png"
+        "./codigo/data/move_0.png",
+        "./codigo/data/move_1.png",
+        "./codigo/data/move_2.png",
+        "./codigo/data/move_3.png",
+        "./codigo/data/move_4.png",
+        "./codigo/data/move_5.png"
     ),
     imgs: [],
     to_screen: [],

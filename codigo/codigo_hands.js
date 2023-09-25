@@ -57,11 +57,11 @@ const context = new AudioContext();
 
 const ImgHands = {
     paths: new Array(
-        "./data/georgia_0.png",
-        "./data/georgia_1.png",
-        "./data/georgia_2.png",
-        "./data/georgia_3.png",
-        "./data/georgia_4.png"
+        "./codigo/data/georgia_0.png",
+        "./codigo/data/georgia_1.png",
+        "./codigo/data/georgia_2.png",
+        "./codigo/data/georgia_3.png",
+        "./codigo/data/georgia_4.png"
     ),
     imgs: [],
     to_screen: undefined

@@ -1,50 +1,50 @@
 const Anti = {
     paths: [
-        "./data/anti_0.jpg",
-        "./data/anti_1.jpg",
-        "./data/dollar_0.jpg",
-        "./data/dollar_1.jpg",
-        "./data/dollar_2.jpg",
-        "./data/dollar_3.jpg",
-        "./data/dollar_4.jpg",
-        "./data/dollar_5.jpg",
+        "./imagem/data/anti_0.jpg",
+        "./imagem/data/anti_1.jpg",
+        "./imagem/data/dollar_0.jpg",
+        "./imagem/data/dollar_1.jpg",
+        "./imagem/data/dollar_2.jpg",
+        "./imagem/data/dollar_3.jpg",
+        "./imagem/data/dollar_4.jpg",
+        "./imagem/data/dollar_5.jpg",
     ],
     images: []
 }
 
 const Eq = {
     paths: [
-        "./data/eq_0.jpg",
-        "./data/eq_1.jpg",
-        "./data/eq_2.jpg",
-        "./data/eq_3.jpg",
-        "./data/eq_4.jpg",
-        "./data/eq_5.jpg",
-        "./data/eq_6.jpg",
+        "./imagem/data/eq_0.jpg",
+        "./imagem/data/eq_1.jpg",
+        "./imagem/data/eq_2.jpg",
+        "./imagem/data/eq_3.jpg",
+        "./imagem/data/eq_4.jpg",
+        "./imagem/data/eq_5.jpg",
+        "./imagem/data/eq_6.jpg",
     ],
     images: []
 }
 
 const PreEq = {
     paths: [
-        "./data/processing_0.jpg",
-        "./data/processing_1.jpg",
-        "./data/processing_2.jpg",
-        "./data/processing_3.jpg",
-        "./data/pureData_0.jpg",
-        "./data/pureData_1.jpg"
+        "./imagem/data/processing_0.jpg",
+        "./imagem/data/processing_1.jpg",
+        "./imagem/data/processing_2.jpg",
+        "./imagem/data/processing_3.jpg",
+        "./imagem/data/pureData_0.jpg",
+        "./imagem/data/pureData_1.jpg"
     ],
     images: []
 }
 
 const Etc = {
     paths: [
-        "./data/restos_0.jpg",
-        "./data/restos_1.jpg",
-        "./data/restos_2.jpg",
-        "./data/restos_3.jpg",
-        "./data/restos_4.jpg",
-        "./data/restos_5.jpg",
+        "./imagem/data/restos_0.jpg",
+        "./imagem/data/restos_1.jpg",
+        "./imagem/data/restos_2.jpg",
+        "./imagem/data/restos_3.jpg",
+        "./imagem/data/restos_4.jpg",
+        "./imagem/data/restos_5.jpg",
     ],
     images: []
 }

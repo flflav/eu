@@ -1,27 +1,27 @@
 const Data = {
     paths: [
         [
-            "./data/A+/colares.jpg",
-            "./data/A+/conchas.jpg",
-            "./data/A+/escamas.jpg"
+            "./serigrafia/data/A+/colares.jpg",
+            "./serigrafia/data/A+/conchas.jpg",
+            "./serigrafia/data/A+/escamas.jpg"
         ],
         [
-            "./data/A1/pilar.jpg",
-            "./data/A1/corrosao.jpg",
-            "./data/A1/difusao.jpg",
-            "./data/A1/colunas.jpg"
+            "./serigrafia/data/A1/pilar.jpg",
+            "./serigrafia/data/A1/corrosao.jpg",
+            "./serigrafia/data/A1/difusao.jpg",
+            "./serigrafia/data/A1/colunas.jpg"
         ],
         [
-            "./data/A2/hijikata.jpg",
-            "./data/A2/disco.jpg",
-            "./data/A2/grade.jpg",
+            "./serigrafia/data/A2/hijikata.jpg",
+            "./serigrafia/data/A2/disco.jpg",
+            "./serigrafia/data/A2/grade.jpg",
         ],
         [
-            "./data/A3/arbus.jpg",
-            "./data/A3/divisao.jpg",
-            "./data/A3/quadrado.jpg",
-            "./data/A3/escorrer.jpg",
-            "./data/A3/dollar.jpg"
+            "./serigrafia/data/A3/arbus.jpg",
+            "./serigrafia/data/A3/divisao.jpg",
+            "./serigrafia/data/A3/quadrado.jpg",
+            "./serigrafia/data/A3/escorrer.jpg",
+            "./serigrafia/data/A3/dollar.jpg"
         ]
     ],
     sizes: [
