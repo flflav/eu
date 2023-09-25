@@ -1,0 +1,124 @@
+::selection {
+    color: none;
+    background: none;
+}
+
+::-moz-selection {
+    color: none;
+    background: none;
+}
+
+:root {
+    --white: rgb(230, 230, 230);
+    --black: rgb(10, 10, 10);
+    --red: rgb(230, 10, 10);
+    --containerSize: clamp(50px, 15vw, 104px);
+    --marginSize: 4px;
+    --fontSize: calc(16px + 1vw);
+    --textSize: clamp(10px, calc(8px + 1vw), 16px);
+    --textMargin: 1.5vh;
+    --lineHeight: 1.2;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "IBM Plex Sans", sans-serif;
+}
+
+html, body {
+    background-color: var(--white);
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    width: 90vw;
+    height: max-content;
+    margin: 0 auto;
+    margin-top: 2vh;
+    margin-bottom: 2vh;
+}
+
+#cover {
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--white);
+    z-index: 99;
+}
+
+#logo {
+    width: clamp(70px, 10vw, 100px);
+}
+
+#header_container {
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    align-self: flex-end;
+    top: 35%;
+    width: max-content;
+    height: max-content;
+    background-color: var(--white);
+    outline: var(--marginSize) solid var(--black);
+    z-index: 8;
+    cursor: pointer;
+}
+
+#header_container .header {
+    display: flex;
+    flex-direction: row;
+    height: calc(var(--containerSize) / 2);
+    margin-left: var(--marginSize);
+}
+
+#header_container #header_bottom {
+    margin-bottom: var(--marginSize);
+}
+
+.header .letter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: calc(var(--containerSize) / 2);
+    margin: var(--marginSize) var(--marginSize) 0 0;
+    font-size: calc(var(--containerSize) / 4);
+    color: var(--white);
+    background-color: var(--black);
+    cursor: pointer;
+}
+
+.header .name {
+    display: flex;
+    flex-direction: row;
+}
+
+#red_box {
+    width: calc(var(--containerSize) / 2);
+    margin: var(--marginSize) var(--marginSize) 0 0;
+    background-color: var(--red);
+    cursor: pointer;
+}
+
+#info {
+    position: absolute;
+    display: none;
+    flex-direction: column;
+    align-self: flex-end;
+    width: max-content;
+    max-width: calc(250px + 10vw);
+    padding: 20px;
+    font-size: calc(var(--fontSize) / 1.5);
+    color: var(--white);
+    background-color: var(--black);
+    opacity: 0.9;
+    z-index: 9;
+    cursor: pointer;
+}

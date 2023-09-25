@@ -1,0 +1,35 @@
+#content_container {
+    display: grid;
+    width: 80%;
+    height: max-content;
+    left: 0;
+    top: 0;
+    cursor: default;
+}
+
+.text {
+    grid-area: 1 / 1;
+    font-size: 12vmax;
+    line-height: 6vmax;
+    word-break: break-all;
+    padding: 2.3vw 0 5.6vw 0;
+    overflow: clip;
+    word-break: break-all;
+    color: rgba(10, 10, 10, 0.7);
+}
+
+.control {
+    position: fixed;
+    display: flex;
+    width: 30vmax;
+    height: 30vmax;
+    left: 50%;
+    top: 25%;
+    color: rgba(0, 0, 0, 0);
+    outline: 4px solid var(--black);
+    cursor: pointer;
+}
+
+canvas {
+    grid-area: 1 / 1;
+}
