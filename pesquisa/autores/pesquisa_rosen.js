@@ -412,7 +412,7 @@ and Bit International, 1961-1973</div>
         pleasure.'"
     </div>
 
-    <img src="./pesquisa/data/Morellet_20PerCent.JPG">
+    <img src="./pesquisa/data/Morellet_20PerCent.jpg">
 </div>
 
 <div class="item">
