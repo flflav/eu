@@ -24,7 +24,7 @@ and Bit International, 1961-1973</div>
             Aufgaben
             Programme für Lösungen</i> [Instead of Solutions for Problems Programs for Solutions]."</div>
 
-    <img src="./data/Gerstner_Opjekte.jpg">
+    <img src="./pesquisa/data/Gerstner_Opjekte.jpg">
 
     <div class="text">"In 'Pour une peinture expérimentale programmée,' Morellet insisted that pictorial experiment
         should be 'based on controllable elements, whereby systematic progress would be made by following a program. The
@@ -35,7 +35,7 @@ and Bit International, 1961-1973</div>
         the artistic cliché of the intuition and facilitated control 'even from such chaotic influences such as taste,
         tradition, fashion, the art trade, prestige, etc.'"</div>
 
-    <img src="./data/Mavigner_Composition.jpg">
+    <img src="./pesquisa/data/Mavigner_Composition.jpg">
 
     <div class="text">
         "The computer seemed to bring to an end the artist's quest to separate the creator and the
@@ -63,7 +63,7 @@ and Bit International, 1961-1973</div>
         of t-4 is for "objects" and nor for "programs", and why nevertheless flow diagrams are requested."
     </div>
 
-    <img src="./data/Mezei_Babel.jpg">
+    <img src="./pesquisa/data/Mezei_Babel.jpg">
 
     <div class="text">
         "[Umberto] Eco, who wrote the introductory text to the <i>arte programmata</i> catalog, described the mobile
@@ -125,13 +125,13 @@ and Bit International, 1961-1973</div>
         aid of a computer and, by providing this illusory innovation, freeze the status quo of society.'
     </div>
 
-    <img src="./data/Picelj_Tendencije4.jpg">
+    <img src="./pesquisa/data/Picelj_Tendencije4.jpg">
 </div>
 
 <div class="item">
     <div class="subtitle">Digital Art: Intrusion or Inclusion? — Peter Weibel</div>
 
-    <img src="./data/EAT_9Evenings.jpg">
+    <img src="./pesquisa/data/EAT_9Evenings.jpg">
 
     <div class="text">
         "The issue that lies at the core of the debate about media art and digital art may be summarized thus: Is media
@@ -168,7 +168,7 @@ and Bit International, 1961-1973</div>
         the spectator ..."
     </div>
 
-    <img src="./data/LeParc_MobileBleu.jpg">
+    <img src="./pesquisa/data/LeParc_MobileBleu.jpg">
 
     <div class="text">
         Marcel Duchamp: "All in all, the creative act is not performed by the artist alone; the spectator brings the
@@ -185,7 +185,7 @@ and Bit International, 1961-1973</div>
         few examples of this handmade programming."
     </div>
 
-    <img src="./data/Devries_RandomObjectivationV71-78.jpg">
+    <img src="./pesquisa/data/Devries_RandomObjectivationV71-78.jpg">
 </div>
 
 <div class="item">
@@ -199,7 +199,7 @@ and Bit International, 1961-1973</div>
         resulting from the polynomials that had not been noted before by mathematicians who have studied Galois fields."
     </div>
 
-    <img src="./data/Bonacic_PLN5.jpg">
+    <img src="./pesquisa/data/Bonacic_PLN5.jpg">
 
     <div class="text">
         "The Dynamic Objects [produced and assembled from electronic components by Bonacic himself] were embodied
@@ -225,7 +225,7 @@ and Bit International, 1961-1973</div>
         will be repeated in approximately 274 year's time."
     </div>
 
-    <img src="./data/Bonacic_GFE32-S.jpg">
+    <img src="./pesquisa/data/Bonacic_GFE32-S.jpg">
 
     <div class="text">
         "... Dynamic Objects by Bonacic are designed both as artworks that can be experience aesthetically, and as
@@ -267,7 +267,7 @@ and Bit International, 1961-1973</div>
         today, without that action the human sphere cannot be enriched."
     </div>
 
-    <img src="./data/Bonacic_DINPR16.jpg">
+    <img src="./pesquisa/data/Bonacic_DINPR16.jpg">
 </div>
 
 <div class="item">
@@ -320,7 +320,7 @@ and Bit International, 1961-1973</div>
         which do not negate spontaneity, but give it boundaries and potential directions."
     </div>
 
-    <img src="./data/Mari_ArteProgrammata.jpg">
+    <img src="./pesquisa/data/Mari_ArteProgrammata.jpg">
 
     <div class="text">
         "It was a sign [...] that within the context of this civilization [of the 20th century] aesthetic pleasure was
@@ -336,7 +336,7 @@ and Bit International, 1961-1973</div>
         was being subjected, and to which it would become increasingly subjected."
     </div>
 
-    <img src="./data/Mari_Strutura726.jpg">
+    <img src="./pesquisa/data/Mari_Strutura726.jpg">
 </div>
 
 <div class="item">
@@ -412,7 +412,7 @@ and Bit International, 1961-1973</div>
         pleasure.'"
     </div>
 
-    <img src="./data/Morellet_20PerCent.JPG">
+    <img src="./pesquisa/data/Morellet_20PerCent.JPG">
 </div>
 
 <div class="item">
@@ -552,7 +552,7 @@ and Bit International, 1961-1973</div>
         in their respective countries."
     </div>
 
-    <img src="./data/Biasi_DinamicoVisualS7.jpg">
+    <img src="./pesquisa/data/Biasi_DinamicoVisualS7.jpg">
 </div>
 
 <div class="item">
@@ -589,7 +589,7 @@ and Bit International, 1961-1973</div>
         substance; it reveals a new world before our eyes."
     </div>
 
-    <img src="./data/Bonacic_IRB1.jpg">
+    <img src="./pesquisa/data/Bonacic_IRB1.jpg">
 </div>
 
 <div class="item">
@@ -627,7 +627,7 @@ and Bit International, 1961-1973</div>
         other."
     </div>
 
-    <img src="./data/Adrian_CT266.jpg">
+    <img src="./pesquisa/data/Adrian_CT266.jpg">
 </div>
 
 <div class="item">
@@ -758,7 +758,7 @@ and Bit International, 1961-1973</div>
         and induction."
     </div>
 
-    <img src="./data/Kawano_Untitled.jpg">
+    <img src="./pesquisa/data/Kawano_Untitled.jpg">
 </div>
 
 <div class="item">
@@ -777,7 +777,7 @@ and Bit International, 1961-1973</div>
         "Response to style is nothing other than an example of induction cognition."
     </div>
 
-    <img src="./data/Nees_23Ecke.jpg">
+    <img src="./pesquisa/data/Nees_23Ecke.jpg">
 </div>
 
 <div class="item">
@@ -805,7 +805,7 @@ and Bit International, 1961-1973</div>
         to its knees."
     </div>
 
-    <img src="./data/Anonima_Retrospective.jpg">
+    <img src="./pesquisa/data/Anonima_Retrospective.jpg">
 </div>
 
 <div class="item">
@@ -826,7 +826,7 @@ and Bit International, 1961-1973</div>
         programs and poses the questions, which the computer then solves as an extension of his hand."
     </div>
 
-    <img src="./data/Nees_ComputergrafikComputerplastik.jpg">
+    <img src="./pesquisa/data/Nees_ComputergrafikComputerplastik.jpg">
 </div>
 
 <div class="item">
@@ -849,7 +849,7 @@ and Bit International, 1961-1973</div>
         objects, we notice their relations, obtaining more complete information on the observed process."
     </div>
 
-    <img src="./data/Bonacic_IRPLNS.jpg">
+    <img src="./pesquisa/data/Bonacic_IRPLNS.jpg">
 </div>
 
 <div class="item">
@@ -941,7 +941,7 @@ and Bit International, 1961-1973</div>
         the dominance of masses."
     </div>
 
-    <img src="./data/Metzger_LiftOff.jpg">
+    <img src="./pesquisa/data/Metzger_LiftOff.jpg">
 
     <div class="text">
         "Until recently, men lived with the illusion that they could fo on refining knowledge and abilities; we now
@@ -972,7 +972,7 @@ and Bit International, 1961-1973</div>
         as well as of the concept of human activity as an active formative process."
     </div>
 
-    <img src="./data/Mosso_Architektur.jpg">
+    <img src="./pesquisa/data/Mosso_Architektur.jpg">
 
     <div class="text">
         "in taking parallel but opposite approaches, <br>
@@ -1061,7 +1061,7 @@ and Bit International, 1961-1973</div>
         4 - In arbitrarily selecting reference points."
     </div>
 
-    <img src="./data/Franke_AnalogoGrafikP2.jpg">
+    <img src="./pesquisa/data/Franke_AnalogoGrafikP2.jpg">
 </div>
 
 <div class="item">
@@ -1127,7 +1127,7 @@ and Bit International, 1961-1973</div>
         field of sober feasibility."
     </div>
 
-    <img src="./data/Chermayeff_GlimpseBlueLandscape.jpg">
+    <img src="./pesquisa/data/Chermayeff_GlimpseBlueLandscape.jpg">
 
     <div class="text">
         "In order to counter the effect of such detrimental conditions, experimental psychology was compelled to pose
@@ -1162,7 +1162,7 @@ and Bit International, 1961-1973</div>
         soldiers to the weapons."
     </div>
 
-    <img src="./data/Maldonado_Composicion.jpg">
+    <img src="./pesquisa/data/Maldonado_Composicion.jpg">
 </div>
 
 <div class="item">
@@ -1256,7 +1256,7 @@ and Bit International, 1961-1973</div>
         and for the making of profit is dangerous and senseless."
     </div>
 
-    <img src="./data/Nake_Matrizenmultiplikation.jpg">
+    <img src="./pesquisa/data/Nake_Matrizenmultiplikation.jpg">
 </div>
 
 <div class="item">

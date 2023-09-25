@@ -1,6 +1,6 @@
 const WaldemarCordeiro = `<div class="title">WALDEMAR CORDEIRO</div>
 
-<img src="./data/Cordeiro_BB.jpg">
+<img src="./pesquisa/data/Cordeiro_BB.jpg">
 
 <div class="item">
     <div class="subtitle">Computer Plotter Art</div>
@@ -76,7 +76,7 @@ const WaldemarCordeiro = `<div class="title">WALDEMAR CORDEIRO</div>
         (digital)."
     </div>
 
-    <img src="./data/Cordeiro_Pirambu.jpg">
+    <img src="./pesquisa/data/Cordeiro_Pirambu.jpg">
 
     <ul>
         <li>uso do mesmo tipo de análise probabilística e geométrica na reprodução em 4 cores da obra <i>Saturno</i>
@@ -86,7 +86,7 @@ const WaldemarCordeiro = `<div class="title">WALDEMAR CORDEIRO</div>
             clássicas</li>
     </ul>
 
-    <img src="./data/Goya_Saturno.jpg">
+    <img src="./pesquisa/data/Goya_Saturno.jpg">
 
     <ul>
         <li>experiências permutacionais de sinais por pseudo-acaso</li>
@@ -97,7 +97,7 @@ const WaldemarCordeiro = `<div class="title">WALDEMAR CORDEIRO</div>
         "Como se um artista desenhasse com bico-de-pena uma foto."
     </div>
 
-    <img src="./data/Cordeiro_Saturno.jpg">
+    <img src="./pesquisa/data/Cordeiro_Saturno.jpg">
 </div>
 
 <div class="item">
@@ -115,7 +115,7 @@ const WaldemarCordeiro = `<div class="title">WALDEMAR CORDEIRO</div>
         para executar um trabalho de arte, mas também para concebê-lo.'"
     </div>
 
-    <img src="./data/Mallary_IncrementalSeries.jpg">
+    <img src="./pesquisa/data/Mallary_IncrementalSeries.jpg">
 
     <ul>
         <li>Leon D. Harmon</li>
@@ -237,7 +237,7 @@ const WaldemarCordeiro = `<div class="title">WALDEMAR CORDEIRO</div>
         numéricos e processamentos lógicos."
     </div>
 
-    <img src="./data/Fluxus_ConcertForSandwiches.jpg">
+    <img src="./pesquisa/data/Fluxus_ConcertForSandwiches.jpg">
 
     <div class="text">
         "Em ambos os endereços [Arte Comportamental/Arteônica] a obra-coisa deixou de ter importância. Agora o
@@ -264,7 +264,7 @@ const WaldemarCordeiro = `<div class="title">WALDEMAR CORDEIRO</div>
         equipamento periférico. Refiro-me à impressora, ao plotter e ao tubo."
     </div>
 
-    <img src="./data/Ono_BloodPiece.jpg">
+    <img src="./pesquisa/data/Ono_BloodPiece.jpg">
 
     <div class="text">
         "Qualquer discussão sobre a arte e o computador ainda é muito genérica: sobre a relação da máquina com o
@@ -298,7 +298,7 @@ const WaldemarCordeiro = `<div class="title">WALDEMAR CORDEIRO</div>
         para a tipografia, a moda da mulher, decoração, etc."
     </div>
 
-    <img src="./data/Mondrian_BroadwayBoogieWoogie.jpg">
+    <img src="./pesquisa/data/Mondrian_BroadwayBoogieWoogie.jpg">
 
     <div class="text">
         "Eu trabalho com matrizes. Quando eu transformo uma imagem em uma matriz, eu começo a fazer operações que

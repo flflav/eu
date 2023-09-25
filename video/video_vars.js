@@ -108,7 +108,7 @@ const VideoTerror = {
             o permanente estado de 'descobrimento' <br>
             redescoberta <br>
             Filme de Terror <br>
-            (vide <a href=".././texto/texto.html" class="a_text">ROTEIRO DE FILME DE TERROR</a>) <br> <br>
+            (vide <a href="./texto.html" class="a_text">ROTEIRO DE FILME DE TERROR</a>) <br> <br>
             invasão portuguesa <br>
             escravidão <br>
             canudos <br>
@@ -243,7 +243,7 @@ const VideoEq = {
             f(x, y) <br>
             onde x e y são coordenadas do quadro de pixels <br> <br>
             mesmo código usado nas serigrafias <br>
-            (vide <a href=".././serigrafia/serigrafia.html" class="a_text">SERIGRAFIA</a>) <br> <br>
+            (vide <a href="./serigrafia.html" class="a_text">SERIGRAFIA</a>) <br> <br>
             aqui <br>
             as variáveis se movimentando: <br>
             x <br>

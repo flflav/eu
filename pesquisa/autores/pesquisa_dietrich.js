@@ -1,6 +1,6 @@
 const FrankDietrich = `<div class="title">FRANK DIETRICH</div>
 
-<img src="./data/Csuri_RandomWar.jpg">
+<img src="./pesquisa/data/Csuri_RandomWar.jpg">
 
 <div class="item">
     <div class="subtitle">Visual Intelligence: The First Decade of Computer Art (1965-1975)</div>
@@ -85,7 +85,7 @@ const FrankDietrich = `<div class="title">FRANK DIETRICH</div>
         and the executing artist could be the computer itself, the 'art-computer'."
     </div>
 
-    <img src="./data/Kawano_Design2-1.jpg">
+    <img src="./pesquisa/data/Kawano_Design2-1.jpg">
 
     <div class="text">
         "Methods of entering graphics were even more restricted. With hardly any interactive means of controlling the
@@ -101,7 +101,7 @@ const FrankDietrich = `<div class="title">FRANK DIETRICH</div>
         maximalist."
     </div>
 
-    <img src="./data/Mohr_P021-G.jpg">
+    <img src="./pesquisa/data/Mohr_P021-G.jpg">
 
     <div class="text">
         "The end of the first decade of computer art coincided with important changes due mainly to three technological

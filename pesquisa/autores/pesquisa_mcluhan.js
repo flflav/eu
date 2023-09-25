@@ -8,7 +8,7 @@ const MarshallMcLuhan = `<div class="title">MARSHALL MCLUHAN</div>
         do Velho Testamento: "E Satã se ergueu contra Israel e fez Davi contar os Israelitas."
     </div>
 
-    <img src="./data/Holerith_TabulatingMachine.jpg">
+    <img src="./pesquisa/data/Holerith_TabulatingMachine.jpg">
 
     <div class="text">
         "... o número é a extensão e a separação de nossa atividade mais íntima e relacional, o sentido do tato. <br>
@@ -22,7 +22,7 @@ const MarshallMcLuhan = `<div class="title">MARSHALL MCLUHAN</div>
         obra de arte muito mais adequado do que a casca convencional da velha imagem pictórica."
     </div>
 
-    <img src="./data/Klee_Caderno.jpg">
+    <img src="./pesquisa/data/Klee_Caderno.jpg">
 
     <div class="text">
         "A coleta estatística de números dá ao homem um novo influxo de intuição primitiva e de conhecimento mágico e
@@ -101,7 +101,7 @@ const MarshallMcLuhan = `<div class="title">MARSHALL MCLUHAN</div>
         pintura."
     </div>
 
-    <img src="./data/Vogue_15-3-1953.jpg">
+    <img src="./pesquisa/data/Vogue_15-3-1953.jpg">
 
     <div class="text">
         "Pelo seu aspecto de prostituição, os bens produzidos em massa sempre preocupam algumas pessoas."
@@ -140,7 +140,7 @@ const MarshallMcLuhan = `<div class="title">MARSHALL MCLUHAN</div>
         imprimir essas imagens naturais de maneira durável, fixas no papel!'"
     </div>
 
-    <img src="./data/Moffat_FoxTalbot.jpg">
+    <img src="./pesquisa/data/Moffat_FoxTalbot.jpg">
 
     <div class="text">
         "Desde as suas origens, a maior parte das ciências via-se impedida de progredir pela falta de um adequado meio
@@ -164,7 +164,7 @@ const MarshallMcLuhan = `<div class="title">MARSHALL MCLUHAN</div>
         demais."
     </div>
 
-    <img src="./data/Stieglitz_OKeeffe.jpg">
+    <img src="./pesquisa/data/Stieglitz_OKeeffe.jpg">
 
     <div class="text">
         "A fotografia não é uma máquina, mas um processo químico e luminoso; cruzado com a máquina, produz o cinema."
@@ -191,7 +191,7 @@ const MarshallMcLuhan = `<div class="title">MARSHALL MCLUHAN</div>
         caracteriza a perspectiva fragmentária da cultura letrada."
     </div>
 
-    <img src="./data/Griffith_TowerPisa.jpg">
+    <img src="./pesquisa/data/Griffith_TowerPisa.jpg">
 
     <div class="text">
         "Numa auto-estrada em movimento, o veículo que reduz a marcha está acelerando em relação à situação geral da
@@ -223,7 +223,7 @@ const MarshallMcLuhan = `<div class="title">MARSHALL MCLUHAN</div>
         interações bioquímicas que sempre busca um novo equilíbrio quando ocorre uma nova extensão."
     </div>
 
-    <img src="./data/Marey_Pelican.jpg">
+    <img src="./pesquisa/data/Marey_Pelican.jpg">
 </div>
 
 <div class="item">
@@ -240,7 +240,7 @@ const MarshallMcLuhan = `<div class="title">MARSHALL MCLUHAN</div>
         crescimento de uma flor pode ser ilustrado tão fácil e livremente como o movimento de um cavalo."
     </div>
 
-    <img src="./data/Muybridge_HorseMotion.jpg">
+    <img src="./pesquisa/data/Muybridge_HorseMotion.jpg">
 
     <div class="text">
         "... a íntima relação entre o mundo do rolo fílmico e a experiência da fantasia pessoal propiciada pela palavra
@@ -260,7 +260,7 @@ const MarshallMcLuhan = `<div class="title">MARSHALL MCLUHAN</div>
         'pregnância'. E quando isto já nos é fornecido, há menos participação no trabalho da imagem."
     </div>
 
-    <img src="./data/Pudovkin_EndPetersburg.jpg">
+    <img src="./pesquisa/data/Pudovkin_EndPetersburg.jpg">
 
     <div class="text">
         "Surgido da forma jornalística da apresentação em corte da comunidade e das coberturas de interesse humano, do
@@ -280,7 +280,7 @@ const MarshallMcLuhan = `<div class="title">MARSHALL MCLUHAN</div>
         espaço pictórico uniforme."
     </div>
 
-    <img src="./data/Eisenstein_Nevsky.jpg">
+    <img src="./pesquisa/data/Eisenstein_Nevsky.jpg">
 
     <div class="text">
         "A mímica deste [<i>Tempos Modernos</i>] e de outros filmes de Chaplin é, precisamente, a mímica do robô, do boneco
@@ -298,7 +298,7 @@ const MarshallMcLuhan = `<div class="title">MARSHALL MCLUHAN</div>
         participante."
     </div>
 
-    <img src="./data/Fleming_WizardOz.jpg">
+    <img src="./pesquisa/data/Fleming_WizardOz.jpg">
 
     <div class="text">
         "O cálculo infinitesimal <i>finge</i> tratar do movimento e da mudança por meio de uma fragmentação acentuada, o
@@ -334,7 +334,7 @@ const MarshallMcLuhan = `<div class="title">MARSHALL MCLUHAN</div>
         de luz e sombra, coisa que a tomada de cinema nunca é, mesmo quando a qualidade da fotografia é pobre."
     </div>
 
-    <img src="./data/Roualt_Girls.jpg">
+    <img src="./pesquisa/data/Roualt_Girls.jpg">
 
     <div class="text">
         "Como em qualquer outro mosaico, a terceira dimensão é estranha à TV, embora lhe possa ser imposta. Na TV, a
@@ -344,7 +344,7 @@ const MarshallMcLuhan = `<div class="title">MARSHALL MCLUHAN</div>
         a inter-relação dos sentidos, mais do que o contato isolado da pele e do objeto."
     </div>
 
-    <img src="./data/BizantineMosaic_Ktisis.jpg">
+    <img src="./pesquisa/data/BizantineMosaic_Ktisis.jpg">
 
     <div class="text">
         "Conta-se que depois de assistir a um bangue-bangue pela TV, um nigeriano observou, deliciado: 'Eu não pensava
@@ -360,7 +360,7 @@ const MarshallMcLuhan = `<div class="title">MARSHALL MCLUHAN</div>
         entrevero vulgar e num abadalação contristadora, na vida americana."
     </div>
 
-    <img src="./data/Cezanne_SainteVictoire.jpg">
+    <img src="./pesquisa/data/Cezanne_SainteVictoire.jpg">
 
     <div class="text">
         "Há muito que a América realizou o seu Mercado Comum pela homogeneização mecânica e letrada da organização
@@ -395,7 +395,7 @@ const MarshallMcLuhan = `<div class="title">MARSHALL MCLUHAN</div>
         que seja esta a característica de toda experiência profunda."
     </div>
 
-    <img src="./data/CBS_LeeOswaldMurder.jpg">
+    <img src="./pesquisa/data/CBS_LeeOswaldMurder.jpg">
 </div>
 
 <div class="item">
@@ -425,7 +425,7 @@ const MarshallMcLuhan = `<div class="title">MARSHALL MCLUHAN</div>
         Renascimento. Quanto à velocidade da luz, trata-se simplesmente da velocidade da causalidade total."
     </div>
 
-    <img src="./data/Caroll_Southey.jpg">
+    <img src="./pesquisa/data/Caroll_Southey.jpg">
 
     <div class="text">
         "... a extrema aceleração da mecanização — uma linha de montagem de fotogramas de celulóide — produziu uma
@@ -436,7 +436,7 @@ const MarshallMcLuhan = `<div class="title">MARSHALL MCLUHAN</div>
         fenômeno — só que menos superficial."
     </div>
 
-    <img src="./data/Chaplin_TemposModernos.jpg">
+    <img src="./pesquisa/data/Chaplin_TemposModernos.jpg">
 
     <div class="text">
         "A automação não é uma extensão dos princípios mecânicos da fragmentação e da separação de operações. Trata-se
@@ -488,7 +488,7 @@ const MarshallMcLuhan = `<div class="title">MARSHALL MCLUHAN</div>
         não é uma substância corpórea, mas percepção e informação."
     </div>
 
-    <img src="./data/Capp_Schmoo.jpg">
+    <img src="./pesquisa/data/Capp_Schmoo.jpg">
 
     <div class="text">
         "Hoje, é a velocidade instantânea da informação elétrica que, pela primeira vez, permite o fácil reconhecimento

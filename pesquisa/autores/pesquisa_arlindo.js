@@ -20,7 +20,7 @@ const ArlindoMachado = `<div class="title">ARLINDO MACHADO</div>
         processos de significação."
     </div>
 
-    <img src="./data/Serra_TelevisionDeliversPeople.jpg">
+    <img src="./pesquisa/data/Serra_TelevisionDeliversPeople.jpg">
 
     <div class="text">
         "Em nome de um conceito de linguagem nem sempre bem assimilado, condenam-se certos trabalhos, por considerá-los
@@ -34,7 +34,7 @@ const ArlindoMachado = `<div class="title">ARLINDO MACHADO</div>
         contexto da imagem e a descoberta de novas relações significantes entre códigos aparentemente tão distintos."
     </div>
 
-    <img src="./data/Muntadas_MediaEcologyAds.jpg">
+    <img src="./pesquisa/data/Muntadas_MediaEcologyAds.jpg">
 
     <div class="text">
         "Com excessão de certos trabalhos pioneiros e já envelhecidos da vídeo-arte, que consistiam apenas na exploração
@@ -108,7 +108,7 @@ const ArlindoMachado = `<div class="title">ARLINDO MACHADO</div>
             reiterativa</i> de sua forma sintagmática."
     </div>
 
-    <img src="./data/Birnbaum_TechnologyTransformation.jpg">
+    <img src="./pesquisa/data/Birnbaum_TechnologyTransformation.jpg">
 
     <div class="text">
         "... o vídeo em geral ocorre em espaços iluminados, em que o ambiente circundante concorre diretamente com o
@@ -151,7 +151,7 @@ const ArlindoMachado = `<div class="title">ARLINDO MACHADO</div>
         sistema de expressão."
     </div>
 
-    <img src="./data/Downey_VideoTransamericas.jpg">
+    <img src="./pesquisa/data/Downey_VideoTransamericas.jpg">
 </div>
 
 <div class="item">
@@ -189,7 +189,7 @@ const ArlindoMachado = `<div class="title">ARLINDO MACHADO</div>
         sistemas de organização social."
     </div>
 
-    <img src="./data/OberTowne_FatBaby.jpg">
+    <img src="./pesquisa/data/OberTowne_FatBaby.jpg">
 
     <div class="text">
         "... o que vemos realmente ao contemplar as imagens produzidas por aparelhos não é o 'mundo', mas determinados

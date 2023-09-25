@@ -42,7 +42,7 @@ const JonathanBenthall = `<div class="title">JONATHAN BENTHALL</div>
         poor."
     </div>
 
-    <img src="./data/Stieglitz_Steerage.jpg">
+    <img src="./pesquisa/data/Stieglitz_Steerage.jpg">
 
     <div class="text">
         John Szarkowski, diretor de fotografia do Museu de Arte Moderna de Nova Iorque: "Like an organism, photography
@@ -71,7 +71,7 @@ const JonathanBenthall = `<div class="title">JONATHAN BENTHALL</div>
         of human <i>attention</i>."
     </div>
 
-    <img src="./data/Proust_Manuscrito.jpg">
+    <img src="./pesquisa/data/Proust_Manuscrito.jpg">
 
     <div class="text">
         "Photography teaches us to recognize a particular pop-singer or politician, or the analogous physiognomies of
@@ -88,7 +88,7 @@ const JonathanBenthall = `<div class="title">JONATHAN BENTHALL</div>
         or picture-postcard.
     </div>
 
-    <img src="./data/Warhol_MostWantedMen.jpg">
+    <img src="./pesquisa/data/Warhol_MostWantedMen.jpg">
 
     <div class="text">
         "Buckminster Fuller calls television the 'third parent' which makes the modern child conscious of humanity and
@@ -177,9 +177,9 @@ const JonathanBenthall = `<div class="title">JONATHAN BENTHALL</div>
         photographic experimentation by Muybridge and Marey."
     </div>
 
-    <img src="./data/Marey_Sprinter.jpg">
+    <img src="./pesquisa/data/Marey_Sprinter.jpg">
 
-    <img src="./data/CTG_RunningColaAfrica.jpg">
+    <img src="./pesquisa/data/CTG_RunningColaAfrica.jpg">
 
     <div class="text">
         "Cordeiro and Moscati's mathematical transformations are trivially simple compared with, for example, the
@@ -189,5 +189,5 @@ const JonathanBenthall = `<div class="title">JONATHAN BENTHALL</div>
         of the computer."
     </div>
 
-    <img src="./data/Cordeiro_Gente.jpg">
+    <img src="./pesquisa/data/Cordeiro_Gente.jpg">
 </div>`;
