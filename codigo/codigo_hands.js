@@ -1,7 +1,8 @@
 const handsTitle = `MÃOS`;
 const handsText = `... de Georgia O'Stieglitz 2022<br>
 pixels -> pcm -> filtro de áudio -> pixels <br>
-(ao acaso para a internet)`;
+(ao acaso para a internet) <br>
+(pode não funcionar no firefox ou em celulares)`;
 const handsBackground = `let workletCode = \`class Worklet extends AudioWorkletProcessor {
     constructor() {
         super();
@@ -97,10 +98,10 @@ const EltHands = {
 }
 
 const ControlHands = {
-    img: [],
-    freq: [],
-    q: [],
-    gain: []
+    img: new Array(randomInt(0, ImgHands.paths.length), randomInt(0, ImgHands.paths.length)),
+    frequency: new Array(randomInt(1, 4800), randomInt(1, 4800)),
+    q: new Array(randomFloat(0.0001, 24), randomFloat(0.0001, 24)),
+    gain: new Array(randomFloat(0.0001, 10), randomFloat(0.0001, 10))
 }
 
 //||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||//
@@ -198,9 +199,10 @@ class SetPgHands {
 callWorklet = async () => {
     await AudHands.ctx.audioWorklet.addModule("./codigo/worklet_hands.js");
     WorkHands.node = new AudioWorkletNode(AudHands.ctx, "worklet_h");
-    
-    runWorklet();
     AudHands.players.forEach(e => e.startPlayer());
+    this.set_control = new SetControl();
+    this.set_control.initControl();
+    runWorklet();
 }
 
 runWorklet = () => {
@@ -213,13 +215,13 @@ runWorklet = () => {
                 AudHands.players[1].stopPlayer();
             }
         } else {
-            if (WorkHands.isWorking) {
-                this.j = 0;
-                while (this.j < e.data.length) {
-                    WorkHands.pcm[WorkHands.work_index] = (e.data == 0) ? 1 : e.data[this.j];
+            if (WorkHands.isWorking && e.data != undefined) {
+                let i = 0;
+                while (i < e.data.length) {
+                    WorkHands.pcm[WorkHands.work_index] = (e.data == 0) ? 1 : e.data[i];
                     WorkHands.work_index++;
                     if (WorkHands.work_index == WorkHands.pcm.length) WorkHands.work_index = 0;
-                    this.j++;
+                    i++;
                 }
             }
         }
@@ -264,8 +266,8 @@ class SetPlayer {
         this.filter.connect(AudHands.final_gain);
         this.filter.type = "bandpass";
         this.filter.frequency.value = randomInt(this.filter.frequency.minValue, this.filter.frequency.maxValue);
-        this.filter.Q.value = randomFloat(this.filter.Q.minValue, this.filter.Q.maxValue);
-        this.filter.gain.value = randomFloat(this.filter.gain.minValue, this.filter.gain.maxValue);
+        this.filter.Q.value = randomFloat(0.0001, 24);
+        this.filter.gain.value = randomFloat(1, 10);
     }
 
     setSource = () => {
@@ -292,6 +294,133 @@ class SetPlayer {
         AudHands.isPlaying = false;
         this.source.stop();
         this.setSource();
+    }
+}
+
+//||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||//
+//##########################################################################//
+//##########################################################################//
+//||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||//
+
+class SetControl {
+    constructor() {
+        this.Scope = {
+            img: ImgHands.paths.length,
+            frequency: [],
+            q: [],
+            gain: []
+        }
+
+        this.Time = {
+            img: [1, 15000],
+            frequency: [],
+            q: [],
+            gain: []
+        }
+        this.setScope();
+        this.setTime();
+    }
+
+    initControl = () => {
+        ControlHands.img = [];
+        ControlHands.frequency = [];
+        ControlHands.q = [];
+        ControlHands.gain = [];
+        for (this.i = 0; this.i < 2; this.i++) {
+            ControlHands.img[this.i] = this.randomImage(this.i);
+            ControlHands.frequency[this.i] = this.randomFrequency(this.i);
+            ControlHands.q[this.i] = this.randomQ(this.i);
+            ControlHands.gain[this.i] = this.randomGain(this.i);
+        }
+    }
+
+    setScope = () => {
+        for (this.i = 0; this.i < 2; this.i++) this.Scope.frequency.push([1, 500]);
+        for (this.i = 0; this.i < 1; this.i++) this.Scope.frequency.push([500, 2000]);
+        for (this.i = 0; this.i < 2; this.i++) this.Scope.frequency.push([2000, 4800]);
+        for (this.i = 0; this.i < 2; this.i++) this.Scope.q.push([0.0001, 1]);
+        for (this.i = 0; this.i < 2; this.i++) this.Scope.q.push([1, 12]);
+        for (this.i = 0; this.i < 1; this.i++) this.Scope.q.push([12, 24]);
+        for (this.i = 0; this.i < 2; this.i++) this.Scope.gain.push([0.0001, 1]);
+        for (this.i = 0; this.i < 1; this.i++) this.Scope.gain.push([1, 5]);
+        for (this.i = 0; this.i < 2; this.i++) this.Scope.gain.push([5, 10]);
+    }
+
+    setTime = () => {
+        for (this.i = 0; this.i < 2; this.i++) this.Time.frequency.push([100, 1000]);
+        for (this.i = 0; this.i < 2; this.i++) this.Time.frequency.push([1000, 15000]);
+        for (this.i = 0; this.i < 1; this.i++) this.Time.frequency.push([15000, 30000]);
+        for (this.i = 0; this.i < 1; this.i++) this.Time.q.push([100, 1000]);
+        for (this.i = 0; this.i < 2; this.i++) this.Time.q.push([1000, 15000]);
+        for (this.i = 0; this.i < 2; this.i++) this.Time.q.push([15000, 30000]);
+        for (this.i = 0; this.i < 1; this.i++) this.Time.gain.push([100, 1000]);
+        for (this.i = 0; this.i < 2; this.i++) this.Time.gain.push([1000, 15000]);
+        for (this.i = 0; this.i < 2; this.i++) this.Time.gain.push([15000, 30000]);
+    }
+
+    randomImage = (player_index) => {
+        this.time_scope = randomInt(0, this.Time.img.length);
+        this.timer = randomInt(this.Time.img[0], this.Time.img[1]);
+        setTimeout(() => {
+            this.old = ControlHands.img[player_index];
+            this.temp = randomInt(0, this.Scope.img);
+            ControlHands.img[player_index] = this.temp;
+            this.setImage(player_index, this.old, this.temp);
+            if (WorkHands.isWorking) this.randomImage(player_index);
+        }, this.timer);
+    }
+
+    setImage = (player_index, old, temp) => {
+        if (old != temp) {
+            AudHands.players[player_index].stopPlayer();
+            AudHands.players[player_index].pcm_index = temp;
+            AudHands.players[player_index].startPlayer();
+        }
+    }
+
+    randomFrequency = (player_index) => {
+        this.time_scope = randomInt(0, this.Time.frequency.length);
+        this.timer = randomInt(this.Time.frequency[this.time_scope][0], this.Time.frequency[this.time_scope][1]);
+        setTimeout(() => {
+            this.temp_scope = randomInt(0, this.Scope.frequency.length);
+            this.temp = randomInt(this.Scope.frequency[this.temp_scope][0], this.Scope.frequency[this.temp_scope][1]);
+            this.setFrequency(player_index, this.temp);
+            if (WorkHands.isWorking) this.randomFrequency(player_index);
+        }, this.timer);
+    }
+
+    setFrequency = (player_index, temp) => {
+        AudHands.players[player_index].filter.frequency.value = temp;
+    }
+
+    randomQ = (player_index) => {
+        this.time_scope = randomInt(0, this.Time.q.length);
+        this.timer = randomInt(this.Time.q[this.time_scope][0], this.Time.q[this.time_scope][1]);
+        setTimeout(() => {
+            this.temp_scope = randomInt(0, this.Scope.q.length);
+            this.temp = randomFloat(this.Scope.q[this.temp_scope][0], this.Scope.q[this.temp_scope][1]);
+            this.setQ(player_index, this.temp);
+            if (WorkHands.isWorking) this.randomQ(player_index);
+        }, this.timer);
+    }
+
+    setQ = (player_index, temp) => {
+        AudHands.players[player_index].filter.Q.value = temp;
+    }
+
+    randomGain = (player_index) => {
+        this.time_scope = randomInt(0, this.Time.gain.length);
+        this.timer = randomInt(this.Time.gain[this.time_scope][0], this.Time.gain[this.time_scope][1]);
+        setTimeout(() => {
+            this.temp_scope = randomInt(0, this.Scope.gain.length);
+            this.temp = randomFloat(this.Scope.gain[this.temp_scope][0], this.Scope.gain[this.temp_scope][1]);
+            this.setGain(player_index, this.temp);
+            if (WorkHands.isWorking) this.randomGain(player_index);
+        }, this.timer);
+    }
+
+    setGain = (player_index, temp) => {
+        AudHands.players[player_index].filter.gain.value = temp;
     }
 }
 
