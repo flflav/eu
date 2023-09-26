@@ -208,7 +208,7 @@ runWorklet = () => {
         if (e.data === "end") {
             AudHands.players[0].stopPlayer();
             AudHands.players[1].stopPlayer();
-            WorkHands.node.disconnect();
+            // WorkHands.node.disconnect();
         } else {
             if (WorkHands.isWorking) {
                 WorkHands.pcm[WorkHands.work_index] = (e.data == 0) ? 1 : e.data;
