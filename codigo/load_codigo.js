@@ -13,6 +13,6 @@ function loadDestruction() {
 }
 
 window.onresize = () => {
-    handsInstance.set_canvas.resetCanvas();
+    hands_inst.set_pg.resetCanvas();
     moveInstance.set_canvas.resetCanvas();
 }
