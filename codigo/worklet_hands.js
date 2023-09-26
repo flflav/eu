@@ -11,14 +11,8 @@ class WorkletHands extends AudioWorkletProcessor {
         }
         if (this.run) {
             this.port.postMessage(input[0][0]);
-            // let i = 0;
-            // while (i < input[0][0].length) {
-            //     this.port.postMessage(input[0][0][i]);
-            //     i++;
-            // }
         } else {
             this.port.postMessage("end");
-            return false;
         }
         return true;
     }

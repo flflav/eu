@@ -73,7 +73,8 @@ const AudHands = {
     num_players: 2,
     load_pcm: undefined,
     players: [],
-    loaded: false
+    loaded: false,
+    isPlaying: false
 }
 
 const WorkHands = {
@@ -196,19 +197,21 @@ class SetPgHands {
 
 callWorklet = async () => {
     await AudHands.ctx.audioWorklet.addModule("./codigo/worklet_hands.js");
+    WorkHands.node = new AudioWorkletNode(AudHands.ctx, "worklet_h");
+    
     runWorklet();
     AudHands.players.forEach(e => e.startPlayer());
 }
 
 runWorklet = () => {
-    WorkHands.node = new AudioWorkletNode(AudHands.ctx, "worklet_h");
     AudHands.final_gain.connect(WorkHands.node);
     WorkHands.node.port.postMessage("start");
     WorkHands.node.port.onmessage = (e) => {
         if (e.data === "end") {
-            AudHands.players[0].stopPlayer();
-            AudHands.players[1].stopPlayer();
-            WorkHands.node.disconnect();
+            if (AudHands.isPlaying) {
+                AudHands.players[0].stopPlayer();
+                AudHands.players[1].stopPlayer();
+            }
         } else {
             if (WorkHands.isWorking) {
                 this.j = 0;
@@ -218,9 +221,6 @@ runWorklet = () => {
                     if (WorkHands.work_index == WorkHands.pcm.length) WorkHands.work_index = 0;
                     this.j++;
                 }
-                // WorkHands.pcm[WorkHands.work_index] = (e.data == 0) ? 1 : e.data;
-                // WorkHands.work_index++;
-                // if (WorkHands.work_index == WorkHands.pcm.length) WorkHands.work_index = 0;
             }
         }
     }
@@ -283,11 +283,13 @@ class SetPlayer {
     }
 
     startPlayer = () => {
+        AudHands.isPlaying = true;
         this.startAt = WorkHands.work_index / AudHands.ctx.sampleRate;
         this.source.start(0, this.startAt);
     }
 
     stopPlayer = () => {
+        AudHands.isPlaying = false;
         this.source.stop();
         this.setSource();
     }
