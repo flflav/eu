@@ -208,12 +208,19 @@ runWorklet = () => {
         if (e.data === "end") {
             AudHands.players[0].stopPlayer();
             AudHands.players[1].stopPlayer();
-            // WorkHands.node.disconnect();
+            WorkHands.node.disconnect();
         } else {
             if (WorkHands.isWorking) {
-                WorkHands.pcm[WorkHands.work_index] = (e.data == 0) ? 1 : e.data;
-                WorkHands.work_index++;
-                if (WorkHands.work_index == WorkHands.pcm.length) WorkHands.work_index = 0;
+                this.j = 0;
+                while (this.j < e.data.length) {
+                    WorkHands.pcm[WorkHands.work_index] = (e.data == 0) ? 1 : e.data[this.j];
+                    WorkHands.work_index++;
+                    if (WorkHands.work_index == WorkHands.pcm.length) WorkHands.work_index = 0;
+                    this.j++;
+                }
+                // WorkHands.pcm[WorkHands.work_index] = (e.data == 0) ? 1 : e.data;
+                // WorkHands.work_index++;
+                // if (WorkHands.work_index == WorkHands.pcm.length) WorkHands.work_index = 0;
             }
         }
     }
