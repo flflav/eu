@@ -265,6 +265,9 @@ class SetGallery {
 
     loadImages = (img_index) => {
         if (img_index == Data.paths[this.index].length) {
+            setTimeout(() => {
+                document.getElementById("cover").style.display = "none";
+            }, 2000);
             this.initGallery();
             return;
         } else {

@@ -1,7 +1,7 @@
 window.onload = () => {
-    setTimeout(() => {
-        document.getElementById("cover").style.display = "none";
-    }, 2000);
+    // setTimeout(() => {
+    //     document.getElementById("cover").style.display = "none";
+    // }, 2000);
     setTimeout(() => {
         setHeader.runAnimation();
         loadDestruction();

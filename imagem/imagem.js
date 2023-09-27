@@ -81,6 +81,9 @@ preload = () => {
         Screen.to_screen.push(createImage(100, 100));
         Screen.screen_pos.push(new Array(2));
     });
+    setTimeout(() => {
+        document.getElementById("cover").style.display = "none";
+    }, 2000);
 }
 
 setup = () => {

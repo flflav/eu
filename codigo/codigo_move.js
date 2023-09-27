@@ -90,6 +90,12 @@ const moveInstance = new p5((move) => {
             ImgMove.imgs.push(move.loadImage(e));
         });
         ImgMove.to_screen = move.createImage(500, 500);
+        pg_loaded++;
+        if (pg_loaded == 2) {
+            setTimeout(() => {
+                document.getElementById("cover").style.display = "none";
+            }, 2000);
+        }        
     }
 
     move.setup = () => {

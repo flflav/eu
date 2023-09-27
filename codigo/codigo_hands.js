@@ -435,6 +435,12 @@ const hands_inst = new p5((hands) => {
             ImgHands.imgs.push(hands.loadImage(e));
         });
         ImgHands.to_screen = hands.createImage(500, 500);
+        pg_loaded++;
+        if (pg_loaded == 2) {
+            setTimeout(() => {
+                document.getElementById("cover").style.display = "none";
+            }, 2000);
+        } 
     }
 
     hands.setup = () => {

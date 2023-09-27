@@ -3,6 +3,9 @@ preload = () => {
         Gif.gif.push(createVideo(e).hide());
         Menu.to_screen = createGraphics(500, 500);
     });
+    setTimeout(() => {
+        document.getElementById("cover").style.display = "none";
+    }, 2000);
 }
 
 setup = () => {
