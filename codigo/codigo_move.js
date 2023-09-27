@@ -89,13 +89,7 @@ const moveInstance = new p5((move) => {
         ImgMove.paths.forEach((e) => {
             ImgMove.imgs.push(move.loadImage(e));
         });
-        ImgMove.to_screen = move.createImage(500, 500);
-        pg_loaded++;
-        if (pg_loaded == 2) {
-            setTimeout(() => {
-                document.getElementById("cover").style.display = "none";
-            }, 2000);
-        }        
+        ImgMove.to_screen = move.createImage(500, 500);     
     }
 
     move.setup = () => {
@@ -163,6 +157,8 @@ class SetCanvasMove {
         ElementsMove.canvas_background.style.width = `${this.canvas_sz}px`;
         ElementsMove.canvas_background.style.height = `${this.canvas_sz}px`;
         ElementsMove.canvas_container.appendChild(ElementsMove.canvas.canvas);
+        pg_loaded++;
+        if (pg_loaded == 2) removeLogo();
 
     }
 

@@ -1,13 +1,16 @@
 let pg_loaded = 0;
 
 window.onload = () => {
-    // setTimeout(() => {
-    //     document.getElementById("cover").style.display = "none";
-    // }, 2000);
     setTimeout(() => {
         setHeader.runAnimation();
         loadDestruction();
     }, 3000);
+}
+
+function removeLogo() {
+    setTimeout(() => {
+        document.getElementById("cover").style.display = "none";
+    }, 2000);
 }
 
 function loadDestruction() {

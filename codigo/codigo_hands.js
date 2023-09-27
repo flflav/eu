@@ -151,6 +151,8 @@ class SetPgHands {
         EltHands.canvas_background.style.width = `${this.canvas_sz}px`;
         EltHands.canvas_background.style.height = `${this.canvas_sz}px`;
         EltHands.canvas_container.appendChild(EltHands.canvas.canvas);
+        pg_loaded++;
+        if (pg_loaded == 2) removeLogo();
     }
 
     resetCanvas = () => {
@@ -435,12 +437,6 @@ const hands_inst = new p5((hands) => {
             ImgHands.imgs.push(hands.loadImage(e));
         });
         ImgHands.to_screen = hands.createImage(500, 500);
-        pg_loaded++;
-        if (pg_loaded == 2) {
-            setTimeout(() => {
-                document.getElementById("cover").style.display = "none";
-            }, 2000);
-        } 
     }
 
     hands.setup = () => {
