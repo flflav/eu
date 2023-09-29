@@ -128,6 +128,7 @@ class SetPg {
         Imgs.forEach((e, i) => {
             Screen.screen_obj.push(new SetScreen(i));
         });
+        removeLogo();
     }
 
     resetCanvas = () => {

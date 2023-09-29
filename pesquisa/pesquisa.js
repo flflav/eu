@@ -63,8 +63,10 @@ class DestroyContent {
     }
 
     pushElements = (elt) => {
-        if (elt.children.length == 0) return;
-        else {
+        if (elt.children.length == 0) {
+            removeLogo();
+            return;
+        } else {
             elt.children.forEach(e => {
                 if (e.className == "text") this.Elt.text.push(e);
                 else if (e.localName != "br") this.Elt.elements.push(e);

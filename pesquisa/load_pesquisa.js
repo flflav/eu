@@ -3,7 +3,7 @@ window.onload = () => {
         destroy_content.runDestruction();
     }, 1);
     setTimeout(() => {
-        document.getElementById("cover").style.display = "none";
+        // document.getElementById("cover").style.display = "none";
         clearInterval(pre_destroy);
     }, 2000);
     setTimeout(() => {

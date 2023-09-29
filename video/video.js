@@ -81,6 +81,7 @@ class SetMenu {
         this.setText();
         this.setKeyframes();
         this.setClick();
+        removeLogo();
     }
 
     resetCanvas = () => {

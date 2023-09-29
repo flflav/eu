@@ -309,6 +309,7 @@ class SetGallery {
             this.clickButton();
             this.clickImage();
         });
+        removeLogo();
     }
 
     animateGallery = () => {

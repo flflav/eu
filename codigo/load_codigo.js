@@ -7,12 +7,6 @@ window.onload = () => {
     }, 3000);
 }
 
-function removeLogo() {
-    setTimeout(() => {
-        document.getElementById("cover").style.display = "none";
-    }, 2000);
-}
-
 function loadDestruction() {
     setDestruction.getElements();
 }
