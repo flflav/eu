@@ -9,15 +9,15 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,400;0,700;1,400&display=swap"
         rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./header/header.css">
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./_header/header.css">
     <link rel="stylesheet" href="./traducao/traducao.css">
 </head>
 
 <body>
 
     <div id="cover">
-        <img src="./header/data/logo.png" id="logo">
+        <img src="./_header/data/logo.png" id="logo">
     </div>
 
     <a href="./index.html" class=".a_page" id="link_a"></a>
@@ -29,59 +29,30 @@
     <a href="./traducao.html" class=".a_page" id="link_x"></a>
     <a href="./pesquisa.html" class=".a_page" id="link_y"></a>
 
-    <div id="header_container">
-        <div class="header" id="header_top">
-            <div class="letter">A</div>
-            <div class="letter">B</div>
-            <div class="letter">C</div>
-            <div class="letter">D</div>
-            <div class="letter">E</div>
-            <div class="name">
-                <div class="letter">F</div>
-                <div class="letter">L</div>
-                <div class="letter">A</div>
-                <div class="letter">V</div>
-            </div>
-        </div>
-        <div class="header" id="header_bottom">
-            <div class="name">
-                <div class="letter">F</div>
-                <div class="letter">L</div>
-                <div class="letter">A</div>
-                <div class="letter">V</div>
-            </div>
-            <div class="letter">W</div>
-            <div class="letter"> </div>
-            <div class="letter">Y</div>
-            <div class="letter">Z</div>
-            <div id="red_box"> </div>
-        </div>
-    </div>
-
     <div id="content_container"></div>
 
     <div id="info">
-        traduções <br>
-        mais ou menos elaboradas <br> <br>
-        reunidas ou não <br>
-        em áreas de interesse <br>
-        ------------------------------------------ <br>
-        --> os títulos e as barras abrem e fecham os textos <br>
-        ---------------------------- <br>
-        ---------------------------- <br>
-        ---------------------------- <br>
-        flavio <br>
-        email -> 16flfl6@gmail.com <br>
-        instagram -> @fcatulo <br>
+        <div>
+            traduções <br>
+            mais ou menos elaboradas <br> <br>
+            reunidas ou não <br>
+            em áreas de interesse <br> <br>
+            ---------------------------- <br>
+            ---------------------------- <br>
+            ---------------------------- <br>
+            títulos e barras abrem/fecham os textos <br>
+            ---------------------------- <br>
+            ---------------------------- <br>
+            ---------------------------- <br> <br>
+            flavio <br>
+            email -> 16flfl6@gmail.com <br>
+            instagram -> @fcatulo <br>
+        </div>
     </div>
 
-    <script src="./header/global.js"></script>
-    <script>
-        Header.current_page = 6;
-        Header.header_direction = "reverse";
-        Header.header_closed = false;
-    </script>
-    <script src="./header/header.js"></script>
+    <script src="./_header/global.js"></script>
+    <script src="./_header/header.js"></script>
+    <script src="./_header/destroy.js"></script>
     <script src="./traducao/traducao_shakespeare.js"></script>
     <script src="./traducao/traducao_catulo.js"></script>
     <script src="./traducao/traducao_mmoore.js"></script>

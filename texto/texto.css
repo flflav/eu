@@ -12,7 +12,7 @@ sub {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    width: 90%;
+    width: 100%;
     height: max-content;
 }
 
@@ -20,73 +20,79 @@ sub {
     display: flex;
     flex-direction: column;
     width: 100%;
-    min-width: 250px;
-    margin-top: 8vh;
+    /* min-width: 250px; */
 }
 
-.text_container .title {
-    font-size: calc(var(--textSize) * 2);
+.title {
+    font-family: "IBM Plex Mono";
+    font-size: calc(var(--txt_size) * 2);
     font-weight: bolder;
+    word-break: break-all;
+    opacity: 0.6;
+    height: 250px;
+    overflow: hidden;
     cursor: pointer;
 }
 
-.text_container .title_line {
+.title_line {
     width: 100%;
-    height: calc(var(--textMargin) * 2.5);
+    height: calc(var(--txt_margin) * 2.5);
     background-color: var(--black);
     cursor: pointer;
 }
 
-.text_container #lower_line {
-    margin-bottom: 12vh;
-}
-
-.text_container .scene {
-    font-size: calc(var(--textSize) * 1.5);
+.scene {
+    font-size: calc(var(--txt_size) * 1.5);
     font-weight: bolder;
     line-height: 0;
     margin: 0 0 0 0;
 }
 
-.text_container .subtitle {
-    width: clamp(250px, 90%, 800px);
-    font-size: calc(var(--textSize) * 1.3);
+.subtitle {
+    width: clamp(190px, 90%, 800px);
+    font-size: calc(var(--txt_size) * 1.3);
     line-height: 0;
     margin: 0 0 0 0;
     cursor: pointer;
     pointer-events: none;
 }
 
-.text_container .item {
-    width: clamp(240px, 95%, 800px);
+.item {
+    width: clamp(190px, 95%, 800px);
     margin-left: 3vw;
 }
 
-.text_container .item .subtitle_line {
+.subtitle_line {
     width: 100%;
     height: 0;
     background-color: var(--black);
 }
 
-.text_container .item .text {
+.text {
     width: 100%;
-    font-size: calc(var(--textSize) * 1.1);
+    font-size: calc(var(--txt_size) * 1.1);
     line-height: 0;
     margin: 0 0 0 0;
     opacity: 0;
 }
 
-.text_container .item .text_center {
+.text_center {
     margin-left: 40%;
 }
 
-.text_container .text_column {
+.text_column {
     column-count: 2;
 }
 
-.text_container .long_text {
+@media screen and (max-width: 670px) {
+    .text_column {
+        column-count: 1;
+    }
+}
+
+.long_text {
     align-self: center;
-    font-size: calc(var(--textSize) * 1.1);
+    font-size: calc(var(--txt_size) * 1.1);
     line-height: 0;
     width: 100%;
     margin: 0 0 0 0;

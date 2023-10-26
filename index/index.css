@@ -1,10 +1,8 @@
-#content_container {
-    width: 90%;
-    font-size: 20vw;
-    font-weight: normal;
-    line-height: 7vw;
+span {
+    font-family: 'IBM Plex Mono';
+    font-size: 5vw;
     word-break: break-all;
-    padding: 5.6vw 0 5.6vw 0;
-    color: rgba(10, 10, 10, 0.7);
+    line-height: 0.5;
+    color: var(--black);
     cursor: default;
 }

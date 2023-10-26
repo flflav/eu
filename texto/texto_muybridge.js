@@ -1,4 +1,4 @@
-const titleMuybridge = `CITAÇÕES EM TORNO DE MUYBRIDGE`;
+const titleMuybridge = `CITAÇÕES EM TORNO DE MUYBRIDGE `;
 
 const textMuybridge = [
     [

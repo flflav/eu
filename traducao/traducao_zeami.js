@@ -1,4 +1,4 @@
-const titleZeami = `ZEAMI`;
+const titleZeami = `ZEAMI `;
 
 const textZeami = [
     [

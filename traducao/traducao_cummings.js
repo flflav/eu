@@ -1,4 +1,4 @@
-const titleCummings = `E. E. CUMMINGS`;
+const titleCummings = `E. E. CUMMINGS `;
 
 const subtitleCummings = [
     `you shall above all things be glad and young`,

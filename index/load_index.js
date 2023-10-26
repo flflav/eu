@@ -1,13 +1,21 @@
+Head.curr_pg = 1;
+
 window.onload = () => {
     setTimeout(() => {
         document.getElementById("cover").style.display = "none";
     }, 2000);
     setTimeout(() => {
-        setHeader.runAnimation();
-        loadDestruction();
+        HeadF.initHead();   
     }, 3000);
+    setTimeout(() => {
+        runHeader();
+        DtF.getElt();
+    }, 4000);
 }
 
-function loadDestruction() {
-    setDestruction.getElements();
+runHeader = () => {    
+    HeadF.animRed();
+    HeadF.clickRed();
+    HeadF.animLinks();
+    HeadF.animInfo();
 }

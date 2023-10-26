@@ -1,50 +1,43 @@
-class SetContent {
-    constructor() {
-        this.Title = [
-            titleShakespeare,
-            titleCatulo,
-            titleMMoore,
-            titleCummings,
-            titleZeami
-        ];
-        this.Subtitle = [
-            subtitleShakespeare,
-            subtitleCatulo,
-            undefined,
-            subtitleCummings,
-            undefined
-        ];
-        this.Text = [
-            textShakespeare,
-            textCatulo,
-            textMMoore,
-            textCummings,
-            textZeami
-        ];
-        this.Elt = {
-            content_container: document.getElementById("content_container"),
-            text_container: [],
-            translation_obj: []
-        }
+const Data = {
+    title: [
+        titleShakespeare,
+        titleCatulo,
+        titleMMoore,
+        titleCummings,
+        titleZeami
+    ],
+    subtitle: [
+        subtitleShakespeare,
+        subtitleCatulo,
+        undefined,
+        subtitleCummings,
+        undefined
+    ],
+    text: [
+        textShakespeare,
+        textCatulo,
+        textMMoore,
+        textCummings,
+        textZeami
+    ]
+}
 
-        this.setContainer();
-        this.setText();
-    }
+const Trans = {
+    cont: document.getElementById("content_container"),
+    trans_cont: [],
+    trans_obj: []
+}
 
-    setContainer = () => {
-        this.Text.forEach((e, i) => {
-            this.Elt.text_container.push(document.createElement("div"));
-            this.Elt.text_container[i].className = "text_container";
-            if (i == this.Text.length - 1) this.Elt.text_container[i].id = "last_text_container";
-            this.Elt.content_container.appendChild(this.Elt.text_container[i]);
-        });
-    }
+const TransF = {};
 
-    setText = () => {
-        this.Text.forEach((e, i) => {
-            this.Elt.translation_obj.push(new SetTranslation(this.Elt.text_container[i], this.Title[i], this.Subtitle[i], e));
-        });
-    }
+TransF.setCont = () => {
+    Data.text.forEach((e, i) => {
+        Trans.trans_cont.push(document.createElement("div"));
+        Trans.trans_cont[i].className = "translation_container";
+        if (i == Data.text.length - 1) Trans.trans_cont[i].id = "last_translation_container";
+        Trans.cont.appendChild(Trans.trans_cont[i]);
+        Trans.trans_obj.push(new SetTranslation(Trans.trans_cont[i], Data.title[i], Data.subtitle[i], Data.text[i]));
+    });
 }
 
 //||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||//
@@ -53,9 +46,9 @@ class SetContent {
 //||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||//
 
 class SetTranslation {
-    constructor(container, title, subtitle, text) {
+    constructor(cont, title, subtitle, text) {
         this.Elt = {
-            title: undefined,
+            title: [],
             title_line: [],
             scene: [],
             subtitle: [],
@@ -63,59 +56,61 @@ class SetTranslation {
             line: [],
             text: []
         }
-        this.Keyframes = {
-            line_height: undefined,
-            margin: undefined,
-            height: undefined,
-            opacity: undefined
+        this.Key_f = {
+            line_height: [{ lineHeight: "0" }, { lineHeight: "1.2" }],
+            margin: [{ margin: "0 0 0 0" }, { margin: "var(--txt_margin) 0 var(--txt_margin) 0" }],
+            height: [{ height: "0" }, { height: "var(--txt_margin)" }],
+            opacity: [{ opacity: "0" }, { opacity: "1", offset: 0.02 }, { opacity: "1" }]
         }
-        this.Options = {
+        this.Opt = {
             duration: 1500,
             fill: "forwards",
             easing: "ease-in-out",
             direction: "normal"
         }
         this.isOpen = false;
-        this.setTitle(container, title, subtitle, text);
-        this.setKeyframes();
+        this.setTitle(cont, title, subtitle, text);
         this.setClick();
     }
 
-    setTitle = (container, title, subtitle, text) => {
-        this.Elt.title = document.createElement("div");
-        this.Elt.title.className = "title";
-        this.Elt.title.innerHTML = title;
-        container.appendChild(this.Elt.title);
-        this.Elt.title_line.push(document.createElement("div"));
-        this.Elt.title_line[0].className = "title_line";
-        container.appendChild(this.Elt.title_line[0]);
-        this.setScene(container, subtitle, text);
-        this.Elt.title_line.push(document.createElement("div"));
-        this.Elt.title_line[1].className = "title_line";
-        this.Elt.title_line[1].id = "lower_line";
-        container.appendChild(this.Elt.title_line[1]);
+    setTitle = (cont, title, subtitle, text) => {
+        this.Elt.title.push(document.createElement("div"));
+        this.Elt.title.at(-1).className = "title";
+        for (this.i = 0; this.i < 100; this.i++) this.Elt.title.at(-1).innerHTML += title;
+        cont.appendChild(this.Elt.title.at(-1));
+        for (this.j = 0; this.j < 2; this.j++) {
+            this.Elt.title_line.push(document.createElement("div"));
+            this.Elt.title_line.at(-1).className = "title_line";
+        }
+        cont.appendChild(this.Elt.title_line[0]);
+        this.setScene(cont, subtitle, text);
+        cont.appendChild(this.Elt.title_line[1]);
+        this.Elt.title.push(document.createElement("div"));
+        this.Elt.title.at(-1).className = "title";
+        for (this.i = 0; this.i < 100; this.i++) this.Elt.title.at(-1).innerHTML += title;
+        cont.appendChild(this.Elt.title.at(-1));
     }
 
-    setScene = (container, subtitle, text) => {
-        this.scene_index = 0;
-        this.text_index = 0;
-        text.forEach((e, i) => {
+    setScene = (cont, subtitle, txt) => {
+        this.scene_idx = 0;
+        this.txt_idx = 0;
+        txt.forEach((e, i) => {
             if (e.length > 2) {
                 this.Elt.scene.push(document.createElement("div"));
-                this.Elt.scene[this.scene_index].className = "scene";
-                this.Elt.scene[this.scene_index].innerHTML = text[i];
-                container.appendChild(this.Elt.scene[this.scene_index]);
-                this.scene_index++;
+                this.Elt.scene[this.scene_idx].className = "scene";
+                this.Elt.scene[this.scene_idx].innerHTML = txt[i];
+                cont.appendChild(this.Elt.scene[this.scene_idx]);
+                this.scene_idx++;
             } else {
-                this.setText(this.text_index, container, subtitle, e);
-                this.text_index++;
+                this.setText(this.txt_idx, cont, subtitle, e);
+                this.txt_idx++;
             }
         });
     }
 
-    setText = (index, container, subtitle, text) => {
+    setText = (idx, cont, subtitle, text) => {
         this.Elt.item.push(document.createElement("div"));
-        this.Elt.item[index].className = "item";
+        this.Elt.item[idx].className = "item";
         this.text = [];
         this.text.push(document.createElement("div"));
         this.text[0].className = "text";
@@ -124,154 +119,113 @@ class SetTranslation {
         this.text[1].className = "text";
         this.text[1].innerHTML = text[1];
         if (subtitle == undefined) {
-            container.appendChild(this.Elt.item[index]);
-            this.Elt.item[index].appendChild(this.text[0]);
-            this.Elt.item[index].appendChild(this.text[1]);
+            cont.appendChild(this.Elt.item[idx]);
+            this.Elt.item[idx].appendChild(this.text[0]);
+            this.Elt.item[idx].appendChild(this.text[1]);
             this.Elt.text.push(this.text);
         } else {
             this.Elt.subtitle.push(document.createElement("div"));
-            this.Elt.subtitle[index].className = "subtitle";
-            this.Elt.subtitle[index].innerHTML = subtitle[index];
-            container.appendChild(this.Elt.subtitle[index]);
-            this.Elt.subtitle[index].appendChild(this.Elt.item[index]);
+            this.Elt.subtitle[idx].className = "subtitle";
+            this.Elt.subtitle[idx].innerHTML = subtitle[idx];
+            cont.appendChild(this.Elt.subtitle[idx]);
+            this.Elt.subtitle[idx].appendChild(this.Elt.item[idx]);
             this.lines = [];
             this.lines.push(document.createElement("div"));
             this.lines[0].className = "subtitle_line";
-            this.Elt.item[index].appendChild(this.lines[0]);
-            this.Elt.item[index].appendChild(this.text[0]);
-            this.Elt.item[index].appendChild(this.text[1]);
+            this.Elt.item[idx].appendChild(this.lines[0]);
+            this.Elt.item[idx].appendChild(this.text[0]);
+            this.Elt.item[idx].appendChild(this.text[1]);
             this.Elt.text.push(this.text);
             this.lines.push(document.createElement("div"));
             this.lines[1].className = "subtitle_line";
-            this.Elt.item[index].appendChild(this.lines[1]);
+            this.Elt.item[idx].appendChild(this.lines[1]);
             this.Elt.line.push(this.lines);
         }
     }
 
-    setKeyframes = () => {
-        this.Keyframes.line_height = [
-            {
-                lineHeight: "0"
-            },
-            {
-                lineHeight: "1.2"
-            }
-        ];
-        this.Keyframes.margin = [
-            {
-                margin: "0 0 0 0"
-            },
-            {
-                margin: "var(--textMargin) 0 var(--textMargin) 0"
-            }
-        ];
-        this.Keyframes.height = [
-            {
-                height: "0"
-            },
-            {
-                height: "var(--textMargin)"
-            }
-        ];
-        this.Keyframes.opacity = [
-            {
-                opacity: "0"
-            },
-            {
-                opacity: "1", offset: 0.02
-            },
-            {
-                opacity: "1"
-            }
-        ];
-    }
-
     setClick = () => {
-        this.Elt.title.onpointerdown = () => { this.runTitleAnimation() };
+        this.Elt.title.forEach(e => {
+            e.onpointerup = () => { this.runTitleAnim() };
+        });
         this.Elt.title_line.forEach(e => {
-            e.onpointerdown = () => { this.runTitleAnimation() };
+            e.onpointerdown = () => { this.runTitleAnim() };
         });
         if (this.Elt.subtitle.length > 0) {
             this.Elt.subtitle.forEach((e, i) => {
-                e.onpointerdown = () => { this.runTextAnimation(i) };
+                e.onpointerdown = () => { this.runTextAnim(i) };
             });
         } else {
             this.Elt.item.forEach((e, i) => {
-                e.onpointerdown = () => { this.runTextAnimation(i) };
+                e.onpointerdown = () => { this.runTextAnim(i) };
             });
         }
     }
 
-    runTitleAnimation = () => {
+    runTitleAnim = () => {
         if (this.isOpen) {
-            this.Options.direction = "reverse";
-            this.Elt.subtitle.forEach((e) => e.style.pointerEvents = "none");
+            this.Opt.direction = "reverse";
+            this.Elt.subtitle.forEach(e => e.style.pointerEvents = "none");
             this.Elt.text.forEach((e) => {
                 e.forEach((f) => f.style.pointerEvents = "none");
             });
         } else {
-            this.Options.direction = "normal";
-            this.Elt.subtitle.forEach((e) => e.style.pointerEvents = "all");
+            this.Opt.direction = "normal";
+            this.Elt.subtitle.forEach(e => e.style.pointerEvents = "all");
             this.Elt.text.forEach((e) => {
                 e.forEach((f) => f.style.pointerEvents = "all");
             });
         }
         this.isOpen = !this.isOpen;
         if (this.Elt.scene.length > 0) {
-            this.Elt.scene.forEach((e) => {
-                e.animate(this.Keyframes.line_height, this.Options);
-                e.animate(this.Keyframes.margin, this.Options);
+            this.Elt.scene.forEach(e => {
+                e.animate(this.Key_f.line_height, this.Opt);
+                e.animate(this.Key_f.margin, this.Opt);
             });
         }
         if (this.Elt.subtitle.length > 0) {
             this.Elt.subtitle.forEach((e) => {
-                e.animate(this.Keyframes.line_height, this.Options);
-                e.animate(this.Keyframes.margin, this.Options);
+                e.animate(this.Key_f.line_height, this.Opt);
+                e.animate(this.Key_f.margin, this.Opt);
             });
         } else {
-            this.runTextAnimation(0);
+            this.runTextAnim(0);
         }
         if (this.Elt.line.length > 0) {
             this.Elt.line.forEach((e) => {
                 e.forEach((f) => {
-                    f.animate(this.Keyframes.height, this.Options);
+                    f.animate(this.Key_f.height, this.Opt);
                 });
             });
         }
-        this.Elt.text.forEach((e) => {
-            this.style = window.getComputedStyle(e[0]);
-            this.lineH = this.style.getPropertyValue("line-height");
-            if (this.lineH != "0px") {
-                e.forEach((f) => {
-                    f.animate(this.Keyframes.line_height, this.Options);
-                    f.animate(this.Keyframes.margin, this.Options);
-                    f.animate(this.Keyframes.opacity, this.Options);
-                });
+        this.Elt.text.forEach(e => {
+            this.st = window.getComputedStyle(e[0]);
+            this.line_h = this.st.getPropertyValue("line-height");
+            if (this.line_h != "0px") {
+                e.forEach(f => {
+                    f.animate(this.Key_f.line_height, this.Opt);
+                    f.animate(this.Key_f.margin, this.Opt);
+                    f.animate(this.Key_f.opacity, this.Opt);
+                });                
             }
         });
     }
 
-    runTextAnimation = (index) => {
-        this.style = window.getComputedStyle(this.Elt.text[index][0]);
-        this.line_h = this.style.getPropertyValue("line-height");
+    runTextAnim = (idx) => {
+        this.st = window.getComputedStyle(this.Elt.text[idx][0]);
+        this.line_h = this.st.getPropertyValue("line-height");
         if (this.line_h == "0px") {
-            this.Options.direction = "normal";
-            this.Elt.text[index].forEach((e) => e.style.pointerEvents = "all");
+            this.Opt.direction = "normal";
+            this.Elt.text[idx].forEach((e) => e.style.pointerEvents = "all");
         } else {
-            this.Options.direction = "reverse";
-            this.Elt.text[index].forEach((e) => e.style.pointerEvents = "none");
+            this.Opt.direction = "reverse";
+            this.Elt.text[idx].forEach((e) => e.style.pointerEvents = "none");
         }
-        this.Elt.text[index].forEach((e) => {
-            e.animate(this.Keyframes.line_height, this.Options);
-            e.animate(this.Keyframes.margin, this.Options);
-            e.animate(this.Keyframes.opacity, this.Options);
+        this.Elt.text[idx].forEach((e) => {
+            e.animate(this.Key_f.line_height, this.Opt);
+            e.animate(this.Key_f.margin, this.Opt);
+            e.animate(this.Key_f.opacity, this.Opt);
         });
     }
 }
 
-//||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||//
-//##########################################################################//
-//##########################################################################//
-//||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||//
-
-const set_content = new SetContent();
+TransF.setCont();

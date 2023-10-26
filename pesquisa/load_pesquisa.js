@@ -1,36 +1,24 @@
+Head.curr_pg = 12;
+
 window.onload = () => {
     let pre_destroy = setInterval(() => {
-        destroy_content.runDestruction();
+        ResF.setDestruction();
     }, 1);
     setTimeout(() => {
-        // document.getElementById("cover").style.display = "none";
         clearInterval(pre_destroy);
+        document.getElementById("cover").style.display = "none";
     }, 2000);
     setTimeout(() => {
-        setHeader.runAnimation();
-        loadDestruction();
+        HeadF.initHead();
     }, 3000);
-    setInterval(() => {
-        reDestroy();
-    }, 60000);
-}
-
-function loadDestruction() {
-    setDestruction.getElements();
-}
-
-function reDestroy() {
-    let re_destroy = setInterval(() => {
-        destroy_content.runDestruction();
-    }, 1);
     setTimeout(() => {
-        clearInterval(re_destroy);
-    }, 10000);
-    destroy_content.Elt.elements.forEach((e) => {
-        destroy_content.destroyPosition(e);
-    });
-    destroy_content.Elt.text.forEach((e) => {
-        destroy_content.destroyPosition(e);
-    });
-    
+        runHeader();
+        DtF.getElt();
+    }, 4000);
+}
+
+runHeader = () => {
+    HeadF.clickRed();
+    HeadF.animLinks();
+    HeadF.animInfo();
 }

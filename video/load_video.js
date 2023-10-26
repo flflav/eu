@@ -1,14 +1,24 @@
+Head.curr_pg = 3;
+
 window.onload = () => {
     setTimeout(() => {
-        setHeader.runAnimation();
-        loadDestruction();
+        document.getElementById("cover").style.display = "none";
+    }, 2000);
+    setTimeout(() => {
+        HeadF.initHead();
     }, 3000);
+    setTimeout(() => {
+        runHeader();
+        DtF.getElt();
+    }, 4000);
 }
 
-function loadDestruction() {
-    setDestruction.getElements();
+runHeader = () => {
+    HeadF.clickRed();
+    HeadF.animLinks();
+    HeadF.animInfo();
 }
 
 window.onresize = () => {
-    Menu.menu_obj.resetCanvas();
+    VidF.resizeGif();
 }

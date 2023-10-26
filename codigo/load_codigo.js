@@ -1,17 +1,25 @@
-let pg_loaded = 0;
+Head.curr_pg = 4;
 
 window.onload = () => {
     setTimeout(() => {
-        setHeader.runAnimation();
-        loadDestruction();
+        document.getElementById("cover").style.display = "none";
+    }, 2000);
+    setTimeout(() => {
+        HeadF.initHead();
     }, 3000);
+    setTimeout(() => {
+        runHeader();
+        DtF.getElt();
+    }, 4000);
 }
 
-function loadDestruction() {
-    setDestruction.getElements();
+runHeader = () => {
+    HeadF.clickRed();
+    HeadF.animLinks();
+    HeadF.animInfo();
 }
 
 window.onresize = () => {
-    hands_inst.set_pg.resetCanvas();
-    moveInstance.set_canvas.resetCanvas();
+    HandsF.resizeCnv();
+    MoveF.resizeCnv();
 }

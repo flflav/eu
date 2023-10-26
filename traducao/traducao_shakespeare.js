@@ -1,4 +1,4 @@
-const titleShakespeare = "SHAKESPEARE";
+const titleShakespeare = "SHAKESPEARE ";
 
 const subtitleShakespeare = [
     `The Second Part of King Henry the Fourth`,

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
@@ -9,18 +9,17 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,400;0,700;1,400&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="./header/header.css">
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./_header/header.css">
     <link rel="stylesheet" href="./pesquisa/pesquisa.css">
-    <script src="https://cdn.jsdelivr.net/npm/p5@1.6.0/lib/p5.js"></script>
-    </style>
 </head>
 
 <body>
 
     <div id="cover">
-        <img src="./header/data/logo.png" id="logo">
+        <img src="./_header/data/logo.png" id="logo">
     </div>
-
+    
     <a href="./index.html" class=".a_page" id="link_a"></a>
     <a href="./serigrafia.html" class=".a_page" id="link_b"></a>
     <a href="./video.html" class=".a_page" id="link_c"></a>
@@ -30,84 +29,52 @@
     <a href="./traducao.html" class=".a_page" id="link_x"></a>
     <a href="./pesquisa.html" class=".a_page" id="link_y"></a>
 
-    <div id="header_container">
-        <div class="header" id="header_top">
-            <div class="letter">A</div>
-            <div class="letter">B</div>
-            <div class="letter">C</div>
-            <div class="letter">D</div>
-            <div class="letter">E</div>
-            <div class="name">
-                <div class="letter">F</div>
-                <div class="letter">L</div>
-                <div class="letter">A</div>
-                <div class="letter">V</div>
-            </div>
-        </div>
-        <div class="header" id="header_bottom">
-            <div class="name">
-                <div class="letter">F</div>
-                <div class="letter">L</div>
-                <div class="letter">A</div>
-                <div class="letter">V</div>
-            </div>
-            <div class="letter">W</div>
-            <div class="letter">X</div>
-            <div class="letter"> </div>
-            <div class="letter">Z</div>
-            <div id="red_box"> </div>
-        </div>
-    </div>
-
     <div id="content_container"></div>
 
     <div id="info">
-        material bruto de estudo <br> <br>
-        anotações <br>
-        de um livro aleatório <br>
-        cada vez que a página é carregada <br> <br>
-        textos <br>
-        imagens <br>
-        embaralhados aleatoriamente <br> <br>
-        e novamente <br>
-        a cada minuto <br> <br>
-        ------------------------------------------ <br> <br>
-        -> Waldemar Cordeiro
-        <i>Fantasia Exata</i> <br>
-        -> Frank Dietrich
-        <i>Visual Intelligence: The First Decade of Computer Art (1965-1975)</i> <br>
-        -> Arlindo Machado <br>
-        <i>O Vídeo e Sua Linguagem</i>
-        <i>O Sujeito no Ciberespaço</i>
-        <i>Tecnologia e Arte Contemporânea: Como Politizar o Debate</i> <br>
-        -> Vilém Flusser <br>
-        <i>Filosofia da Caixa Preta</i> <br>
-        -> Jonathan Benthall <br>
-        <i>Science and Technology in Art Today</i> <br>
-        -> Margit Rosen (ed.) <br>
-        <i>A Little-Known Story about a Movement, a Magazine, and the Computer's Arrival in Art: New Tendencies and Bit
-            International, 1961-1973</i> <br>
-        -> Marshall McLuhan <br>
-        <i>Os Meios de Comunicação Como Extensões do Homem</i> <br>
-        -> Decio Pignatari <br>
-        <i>Contracomunicação</i> <br>
-        ------------------------------------------ <br>
-        --> recarregue a página para um novo livro <br>
-        ---------------------------- <br>
-        ---------------------------- <br>
-        ---------------------------- <br>
-        flavio <br>
-        email -> 16flfl6@gmail.com <br>
-        instagram -> @fcatulo <br>
+        <div>
+            material bruto de estudo <br> <br>
+            anotações <br>
+            de um livro aleatório <br>
+            cada vez que a página é carregada <br> <br>
+            fontes <br>
+            :: <br>
+            -- Waldemar Cordeiro <br>
+            <i>Fantasia Exata</i> <br>
+            -- Frank Dietrich
+            <i>Visual Intelligence: The First Decade of Computer Art (1965-1975)</i> <br>
+            -- Arlindo Machado <br>
+            <i>O Vídeo e Sua Linguagem</i>
+            <i>O Sujeito no Ciberespaço</i>
+            <i>Tecnologia e Arte Contemporânea: Como Politizar o Debate</i> <br>
+            -- Vilém Flusser <br>
+            <i>Filosofia da Caixa Preta</i> <br>
+            -- Jonathan Benthall <br>
+            <i>Science and Technology in Art Today</i> <br>
+            -- Margit Rosen (ed.) <br>
+            <i>A Little-Known Story about a Movement, a Magazine, and the Computer's Arrival in Art: New Tendencies and
+                Bit
+                International, 1961-1973</i> <br>
+                -- Marshall McLuhan <br>
+            <i>Os Meios de Comunicação Como Extensões do Homem</i> <br>
+            -- Decio Pignatari <br>
+            <i>Contracomunicação</i> <br> <br>
+            ---------------------------- <br>
+            ---------------------------- <br>
+            ---------------------------- <br>
+            recarregue a página para um novo livro <br>
+            ---------------------------- <br>
+            ---------------------------- <br>
+            ---------------------------- <br> <br>
+            flavio <br>
+            email -> 16flfl6@gmail.com <br>
+            instagram -> @fcatulo <br>
+        </div>
     </div>
 
-    <script src="./header/global.js"></script>
-    <script>
-        Header.currentPage = 7;
-        Header.header_direction = "reverse";
-        Header.header_closed = false;
-    </script>
-    <script src="./header/header.js"></script>
+    <script src="./_header/global.js"></script>
+    <script src="./_header/header.js"></script>
+    <script src="./_header/destroy.js"></script>
     <script src="./pesquisa/autores/pesquisa_wc.js"></script>
     <script src="./pesquisa/autores/pesquisa_arlindo.js"></script>
     <script src="./pesquisa/autores/pesquisa_dietrich.js"></script>

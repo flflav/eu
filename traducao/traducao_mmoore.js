@@ -1,4 +1,4 @@
-const titleMMoore = "MARIANNE MOORE"
+const titleMMoore = "MARIANNE MOORE "
 
 const textMMoore = [
     [

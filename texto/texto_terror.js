@@ -1,4 +1,4 @@
-const titleTerror = "ROTEIRO DE FILME DE TERROR";
+const titleTerror = "ROTEIRO DE FILME DE TERROR ";
 
 const subtitleTerror = [
     `Shakespeare — Ricardo III`,

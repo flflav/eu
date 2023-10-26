@@ -24,13 +24,13 @@ const Data = {
             "./serigrafia/data/A3/dollar.jpg"
         ]
     ],
-    sizes: [
+    ctg: [
         "A+",
         "A1",
         "A2",
         "A3"
     ],
-    descriptions: [
+    txt: [
         [
             `[A+ - 0] <br>
             viscolinho <br>
@@ -115,282 +115,137 @@ const Data = {
     ]
 }
 
-const Menu = {
-    body: document.getElementsByTagName("body")[0],
-    container: document.getElementById("content_container"),
-    sections: []
-}
-
-const Zoom = {
-    container: undefined,
-    image: undefined,
-    isOpen: false
-}
-
-const Info = {
-    container: undefined,
-    description: undefined,
-    isOpen: false
-}
-
 //||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||//
 //##########################################################################//
 //##########################################################################//
 //||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||//
 
-class SetMenu {
-    constructor() {
-        this.Keyframes = {
-            colorSection: undefined
-        }
-        this.Options = {
-            duration: 300,
-            fill: "forwards",
-            easing: "step-start",
-            direction: "reverse"
-        }
-        this.gallery_objs = [];
-        this.initMenu();
-        this.initGallery();
-        this.initInfo();
-        this.initZoom();
-        this.setKeyframes();
-        this.clickSection();
-    }
+const Seri = {
+    cont: document.getElementById("content_container"),
+    ctg_labels: ["A+", "A1", "A2", "A3"],
+    num_ctg: undefined,
+    ctg: [],
+    gal_cover: undefined,
+    gal_cont: undefined,
+    imgs: [[], [], [], []],
+    zoom_cont: undefined,
+    zoom_img: undefined,
+    zoom_info: undefined,
+    zoom_btn: undefined
+}
 
-    initMenu = () => {
-        Data.sizes.forEach(e => {
-            Menu.sections.push(document.createElement("div"));
-            Menu.sections.at(-1).className = "menu_sections";
-            Menu.sections.at(-1).innerHTML = e;
-            Menu.container.appendChild(Menu.sections.at(-1));
-        });
-    }
-
-    initGallery = () => {
-        Menu.sections.forEach((e, i) => this.gallery_objs.push(new SetGallery(i)));
-    }
-
-    initInfo = () => {
-        Info.container = document.createElement("div");
-        Info.container.className = "info_container";
-        Menu.body.appendChild(Info.container);
-        Info.description = document.createElement("div");
-        Info.description.className = "info_description";
-        Info.container.appendChild(Info.description);
-    }
-
-    initZoom = () => {
-        Zoom.container = document.createElement("div");
-        Zoom.container.className = "zoom_container";
-        Menu.body.appendChild(Zoom.container);
-        Zoom.image = document.createElement("img");
-        Zoom.container.appendChild(Zoom.image);
-    }
-
-    setKeyframes = () => {
-        this.Keyframes.colorSection = [
+const SeriA = {
+    anim_ctg: {
+        temp_opacity: "",
+        key_f: [
             {
-                color: "var(--black)",
-                borderBottom: "2vmax solid var(--black)"
+                opacity: undefined,
             },
             {
-                color: "var(--red)",
-                borderBottom: "2vmax solid var(--red)"
+                opacity: "1.0"
             }
-        ];
-    }
-
-    clickSection = () => {
-        Menu.sections.forEach((e, i) => {
-            e.onpointerdown = () => {
-                this.animateSection(e, i);
-            }
-        });
-    }
-
-    animateSection = (section, index) => {
-        section.animate(this.Keyframes.colorSection, this.Options);
-        setTimeout(() => {
-            this.close = undefined;
-            this.gallery_objs.forEach((e, i) => { if (i != index && e.isOpen) this.close = e });
-            if (this.close == undefined) this.gallery_objs[index].animateGallery();
-            else {
-                this.close.animateGallery();
-                setTimeout(() => { this.gallery_objs[index].animateGallery() }, this.close.Options.duration);
-            }
-        }, this.Options.duration);
-    }
-}
-
-//||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||//
-//##########################################################################//
-//##########################################################################//
-//||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||//
-
-class SetGallery {
-    constructor(index) {
-        this.index = index;
-        this.Gallery = {
-            container: undefined,
-            menu: undefined,
-            button_containers: [],
-            buttons: [],
-            gallery: undefined,
-            images: []
-        }
-        this.Keyframes = {
-            openGallery: undefined,
-            clickButton: [{ border: "5px solid var(--black)" }, { border: "5px solid var(--red)" }]
-        }
-        this.Options = {
-            duration: 1500,
-            fill: "forwards",
-            easing: "ease-in-out",
-            direction: "normal"
-        }
-        this.ButtonOptions = {
+        ],
+        opt: {
             duration: 300,
-            fill: "forwards",
-            easing: "step-start",
-            direction: "reverse"
+            easing: "step-start"
         }
-        this.isOpen = false;
-        this.initImages();
-    }
+    },
+}
 
-    initImages = () => {
-        this.loadImages(0);
-    }
+const SeriF = {};
 
-    loadImages = (img_index) => {
-        if (img_index == Data.paths[this.index].length) {
+//||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||//
+//##########################################################################//
+//##########################################################################//
+//||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||//
+
+Seri.num_ctg = Seri.ctg_labels.length * 20;
+
+SeriF.initSeri = () => {
+    let c = 0;
+    let i = 0;
+    while (i < Seri.num_ctg) {
+        Seri.ctg.push(document.createElement("div"));
+        Seri.ctg[i].className = "category";
+        Seri.ctg[i].innerHTML = Seri.ctg_labels[c];
+        Seri.ctg[i].style.opacity = `${randomFloat(0.2, 0.8)}`;
+        Seri.cont.appendChild(Seri.ctg[i]);
+        c++
+        if (c == Seri.ctg_labels.length) c = 0;
+        i++;
+    }
+}
+
+SeriF.initGal = () => {
+    Seri.gal_cover = document.createElement("div");
+    Seri.gal_cover.className = "gallery_cover";
+    Head.body.appendChild(Seri.gal_cover);
+    Seri.gal_cont = document.createElement("div");
+    Seri.gal_cont.className = "gallery_container";
+    Head.body.appendChild(Seri.gal_cont);
+}
+
+SeriF.initZoom = () => {
+    Seri.zoom_cont = document.createElement("div");
+    Seri.zoom_cont.className = "zoom_container";
+    Head.body.appendChild(Seri.zoom_cont);
+    Seri.zoom_info = document.createElement("div");
+    Seri.zoom_info.className = "zoom_info";
+    Seri.zoom_cont.appendChild(Seri.zoom_info);
+    Seri.zoom_img = document.createElement("img");
+    Seri.zoom_cont.appendChild(Seri.zoom_img);
+    Seri.zoom_btn = document.createElement("div");
+    Seri.zoom_btn.className = "zoom_button";
+    Head.body.appendChild(Seri.zoom_btn);
+}
+
+//||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||//
+//##########################################################################//
+//##########################################################################//
+//||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||//
+
+SeriF.clickCtg = () => {
+    Seri.ctg.forEach(e => {
+        e.onpointerup = (f) => {
+            let st = window.getComputedStyle(e);
+            SeriA.anim_ctg.key_f[0].opacity = st.getPropertyValue("opacity");
+            e.animate(SeriA.anim_ctg.key_f, SeriA.anim_ctg.opt);
             setTimeout(() => {
-                document.getElementById("cover").style.display = "none";
-            }, 2000);
-            this.initGallery();
-            return;
-        } else {
-            this.Gallery.images.push(document.createElement("img"));
-            this.Gallery.images[img_index].src = Data.paths[this.index][img_index];
-            this.Gallery.images[img_index].setAttribute("draggable", false);
-            this.Gallery.images[img_index].onload = () => {
-                img_index++;
-                this.loadImages(img_index);
+                let gal_rect = Seri.gal_cont.getBoundingClientRect();
+                if (f.pageX < window.innerWidth / 2) Seri.gal_cont.style.left = `${f.pageX - gal_rect.width * 0.25}px`;
+                else Seri.gal_cont.style.left = `${f.pageX - gal_rect.width * 0.75}px`;
+                Seri.gal_cont.style.top = `${f.pageY}px`;
+                SeriF.openGal(Data.ctg.indexOf(e.innerHTML));
+            }, SeriA.anim_ctg.opt.duration);
+        }
+    });
+}
+
+SeriF.openGal = (idx) => {
+    Seri.gal_cover.style.display = "block";
+    let data_i = 0;
+    let load_imgs = setInterval(() => {
+        Seri.imgs[idx].push(document.createElement("img"));
+        Seri.imgs[idx][data_i].src = Data.paths[idx][data_i];
+        Seri.imgs[idx][data_i].onload = () => {
+            Seri.gal_cont.appendChild(Seri.imgs[idx][data_i]);
+            data_i++;
+            if (data_i == Data.paths[idx].length) {
+                clearInterval(load_imgs);
+                Seri.imgs.forEach((e, i) => {
+                    e.forEach((f, j) => {
+                        f.onpointerup = () => {
+                            SeriF.openZoom(f, i, j);
+                        }
+                    });
+                });
             }
-        }
-    }
-
-    initGallery = () => {
-        this.Gallery.container = document.createElement("div");
-        this.Gallery.container.className = "gallery_container";
-        Menu.container.insertBefore(this.Gallery.container, Menu.sections[this.index + 1]);
-        this.Gallery.menu = document.createElement("div");
-        this.Gallery.menu.className = "gallery_menu";
-        this.Gallery.container.appendChild(this.Gallery.menu);
-        this.Gallery.gallery = document.createElement("div");
-        this.Gallery.gallery.className = "gallery_gallery";
-        this.Gallery.container.appendChild(this.Gallery.gallery);
-        this.loadGallery();
-    }
-
-    loadGallery = () => {
-        this.Gallery.images.forEach(e => {
-            this.Gallery.gallery.appendChild(e);
-            this.style = window.getComputedStyle(e);
-            this.h = this.style.getPropertyValue("height");
-            this.Gallery.button_containers.push(document.createElement("div"));
-            this.Gallery.button_containers.at(-1).className = "gallery_button_container";
-            this.Gallery.menu.appendChild(this.Gallery.button_containers.at(-1));
-            this.Gallery.button_containers.at(-1).style.height = `${this.h}`;
-            this.Gallery.buttons.push(document.createElement("div"));
-            this.Gallery.buttons.at(-1).className = "gallery_button";
-            this.Gallery.button_containers.at(-1).appendChild(this.Gallery.buttons.at(-1));
-            this.clickButton();
-            this.clickImage();
-        });
-        removeLogo();
-    }
-
-    animateGallery = () => {
-        if (!this.isOpen) this.openGallery();
-        else this.closeGallery();
-    }
-
-    openGallery = () => {
-        this.isOpen = true;
-        this.style = window.getComputedStyle(this.Gallery.gallery);
-        this.h = this.style.getPropertyValue("height");
-        this.Keyframes.openGallery = [{ height: "0" }, { height: `${this.h}` }];
-        this.Gallery.container.animate(this.Keyframes.openGallery, this.Options);
-        setTimeout(() => { colorImage() }, this.Options.duration);
-    }
-
-    closeGallery = () => {
-        this.isOpen = false;
-        this.style = window.getComputedStyle(this.Gallery.container);
-        this.h = this.style.getPropertyValue("height");
-        this.Keyframes.openGallery = [{ height: `${this.h}` }, { height: "0" }];
-        this.Gallery.container.animate(this.Keyframes.openGallery, this.Options);
-    }
-
-    clickButton = () => {
-        this.Gallery.buttons.forEach((e, i) => {
-            e.onpointerdown = () => {
-                this.animateButton(e, i);
-            }
-        });
-    }
-
-    animateButton = (button, index) => {
-        button.animate(this.Keyframes.clickButton, this.ButtonOptions);
-        setTimeout(() => { this.openInfo(index) }, this.ButtonOptions.duration);
-    }
-
-    openInfo = (index) => {
-        Info.container.style.display = "block";
-        Info.description.style.display = "flex";
-        Info.isOpen = true;
-        Info.description.innerHTML = Data.descriptions[this.index][index];
-        if (Info.isOpen) {
-            document.onpointerdown = () => {
-                Info.container.style.display = "none";
-                Info.description.style.display = "none";
-                Info.isOpen = false;
-            }
-        }
-    }
-
-    clickImage = () => {
-        this.Gallery.images.forEach(e => {
-            e.onpointerup = () => { this.openZoom(e) };
-        });
-        this.closeZoom();
-    }
-
-    openZoom = (img) => {
-        Zoom.container.style.display = "flex";
-        Zoom.image.src = img.src;
-        Zoom.image.style.filter = "none";
-        this.imageRect = img.getBoundingClientRect();
-        this.wDiff = Math.abs(window.innerWidth - this.imageRect.width);
-        this.hDiff = Math.abs(window.innerHeight - this.imageRect.height);
-        if (this.wDiff < this.hDiff) {
-            Zoom.image.style.width = "90vw";
-            Zoom.image.style.height = "auto";
-        } else {
-            Zoom.image.style.width = "auto";
-            Zoom.image.style.height = "90vh";
-        }
-        Zoom.isOpen = true;
-    }
-
-    closeZoom = () => {
-        Zoom.container.onpointerup = () => {
-            Zoom.container.style.display = "none";
-            Zoom.image.src = "";
-        }
-        Zoom.isOpen = false;
+        };
+    }, 100);
+    Seri.gal_cover.onpointerup = () => {
+        Seri.imgs[idx] = [];
+        while (Seri.gal_cont.firstChild) Seri.gal_cont.removeChild(Seri.gal_cont.lastChild);
+        Seri.gal_cover.style.display = "none";
     }
 }
 
@@ -399,19 +254,31 @@ class SetGallery {
 //##########################################################################//
 //||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||//
 
-const setMenu = new SetMenu();
-let inFocus = undefined;
-
-function colorImage() { 
-    let elt = document.elementFromPoint(window.innerWidth / 2, window.innerHeight / 2);
-    if (elt.tagName == "IMG") {
-        if (inFocus != undefined && elt.src != inFocus.src) {
-            elt.style.filter = "none";
-            inFocus.style.filter = "grayscale(100%)";
-            inFocus = elt;
-        } else {
-            elt.style.filter = "none";
-            inFocus = elt;
-        }
+SeriF.openZoom = (img, ctg_i, img_i) => {
+    Seri.zoom_cont.style.display = "flex";
+    Seri.zoom_cont.onpointerup = () => {
+        Seri.zoom_img.style.display = "block";
+        Seri.zoom_cont.style.display = "none";
+        Seri.zoom_btn.style.display = "none";
     }
+    Seri.zoom_info.innerHTML = Data.txt[ctg_i][img_i];
+    Seri.zoom_img.src = img.src;
+    Seri.zoom_btn.style.display = "block";
+    Seri.zoom_btn.onpointerup = () => {
+        let st = window.getComputedStyle(Seri.zoom_img);
+        let dsp = st.getPropertyValue("display");
+        if (dsp != "none") Seri.zoom_img.style.display = "none";
+        else Seri.zoom_img.style.display = "block";
+    }
+    
 }
+
+//||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||//
+//##########################################################################//
+//##########################################################################//
+//||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||//
+
+SeriF.initSeri();
+SeriF.initGal();
+SeriF.initZoom();
+SeriF.clickCtg();

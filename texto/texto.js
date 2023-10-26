@@ -1,52 +1,45 @@
-class SetContent {
-    constructor() {
-        this.Title = [
-            titleTerror,
-            titleMuybridge
-        ];
-        this.Subtitle = [
-            subtitleTerror,
-            undefined
-        ];
-        this.Text = [
-            textTerror
-        ];
-        this.Elt = {
-            content_contaienr: document.getElementById("content_container"),
-            text_container: [],
-            text_obj: []
-        }
-        this.setMuybridge(textMuybridge);
-        this.setContainer();
-        this.setText();
-    }
+const Data = {
+    title: [
+        titleTerror,
+        titleMuybridge
+    ],
+    subtitle: [
+        subtitleTerror,
+        undefined
+    ],
+    text: [
+        textTerror
+    ]
+}
 
-    setMuybridge = (get_text) => {
-        this.temp = [];
-        this.i = 0;
-        while (this.i < get_text.length - 1) {
-            this.temp.push(get_text[this.i]);
-            this.i++;
-        }
-        this.rand_muybridge = shuffleArray(this.temp);
-        this.rand_muybridge.push(get_text.at(-1));
-        this.Text.push(this.rand_muybridge);
-    }
+const Text = {
+    cont: document.getElementById("content_container"),
+    text_cont: [],
+    text_obj: []
+}
 
-    setContainer = () => {
-        this.Text.forEach((e, i) => {
-            this.Elt.text_container.push(document.createElement("div"));
-            this.Elt.text_container.at(-1).className = "text_container";
-            this.Elt.text_container.at(-1).id = `container_${i}`;
-            this.Elt.content_contaienr.appendChild(this.Elt.text_container.at(-1));
-        });
-    }
+const TextF = {};
 
-    setText = () => {
-        this.Text.forEach((e, i) => {
-            this.Elt.text_obj.push(new SetText(this.Elt.text_container[i], this.Title[i], this.Subtitle[i], e));
-        });
+TextF.initMuybridge = () => {
+    let temp = [];
+    let i = 0;
+    while (i < textMuybridge.length - 1) {
+        temp.push(textMuybridge[i]);
+        i++;
     }
+    let rand_muy = shuffleArray(temp);
+    rand_muy.push(textMuybridge.at(-1));
+    Data.text.push(rand_muy);
+}
+
+TextF.setCont = () => {
+    Data.text.forEach((e, i) => {
+        Text.text_cont.push(document.createElement("div"));
+        Text.text_cont.at(-1).className = "text_container";
+        Text.text_cont.at(-1).id = `container_${i}`;
+        Text.cont.appendChild(Text.text_cont.at(-1));
+        Text.text_obj.push(new SetText(Text.text_cont[i], Data.title[i], Data.subtitle[i], e));
+    });
 }
 
 //||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||//
@@ -55,222 +48,187 @@ class SetContent {
 //||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||//
 
 class SetText {
-    constructor(container, title, subtitle, text) {
+    constructor(cont, title, subtitle, txt) {
         this.Elt = {
-            title: undefined,
+            title: [],
             title_line: [],
             scene: [],
             subtitle: [],
             item: [],
             line: [],
             text: []
-        };
-        this.Keyframes = {
-            line_height: undefined,
-            margin: undefined,
-            height: undefined,
-            opacity: undefined
-        };
-        this.Options = {
+        }
+        this.Key_f = {
+            line_height: [{ lineHeight: "0" }, { lineHeight: "1.2" }],
+            margin: [{ margin: "0 0 0 0" }, { margin: "var(--txt_margin) 0 var(--txt_margin) 0" }],
+            height: [{ height: "0" }, { height: "var(--txt_margin)" }],
+            opacity: [{ opacity: "0" }, { opacity: "1", offset: 0.02 }, { opacity: "1" }]
+        }
+        this.Opt = {
             duration: 1500,
             fill: "forwards",
             easing: "ease-in-out",
             direction: "normal"
-        };
+        }
         this.isOpen = false;
-        this.setTitle(container, title, subtitle, text);
-        this.setKeyframes();
+        this.setTitle(cont, title, subtitle, txt);
         this.setClick();
     }
 
-    setTitle = (container, title, subtitle, text) => {
-        this.Elt.title = document.createElement("div");
-        this.Elt.title.className = "title";
-        this.Elt.title.innerHTML = title;
-        container.appendChild(this.Elt.title);
-        for (this.i = 0; this.i < 2; this.i++) {
+    setTitle = (cont, title, subtitle, txt) => {
+        this.Elt.title.push(document.createElement("div"));
+        this.Elt.title.at(-1).className = "title";
+        for (this.i = 0; this.i < 20; this.i++) this.Elt.title.at(-1).innerHTML += title;
+        cont.appendChild(this.Elt.title.at(-1));
+        for (this.j = 0; this.j < 2; this.j++) {
             this.Elt.title_line.push(document.createElement("div"));
             this.Elt.title_line.at(-1).className = "title_line";
         }
-        container.appendChild(this.Elt.title_line[0]);
-        this.setScene(container, subtitle, text);
-        this.Elt.title_line.at(-1).id = "lower_line";
-        container.appendChild(this.Elt.title_line[1]);
+        cont.appendChild(this.Elt.title_line[0]);
+        this.setScene(cont, subtitle, txt);
+        cont.appendChild(this.Elt.title_line[1]);
+        this.Elt.title.push(document.createElement("div"));
+        this.Elt.title.at(-1).className = "title";
+        for (this.i = 0; this.i < 20; this.i++) this.Elt.title.at(-1).innerHTML += title;
+        cont.appendChild(this.Elt.title.at(-1));
     }
 
-    setScene = (container, subtitle, text) => {
-        this.scene_index = 0;
-        this.text_index = 0;
-        text.forEach((e, i) => {
+    setScene = (cont, subtitle, txt) => {
+        this.scene_idx = 0;
+        this.txt_idx = 0;
+        txt.forEach((e, i) => {
             if (e.length > 1) {
                 this.Elt.scene.push(document.createElement("div"));
-                this.Elt.scene[this.scene_index].className = "scene";
-                this.Elt.scene[this.scene_index].innerHTML = text[i];
-                container.appendChild(this.Elt.scene[this.scene_index]);
-                this.scene_index++;
+                this.Elt.scene[this.scene_idx].className = "scene";
+                this.Elt.scene[this.scene_idx].innerHTML = txt[i];
+                cont.appendChild(this.Elt.scene[this.scene_idx]);
+                this.scene_idx++;
             } else {
-                this.setText(this.text_index, container, subtitle, e);
-                this.text_index++;
+                this.setText(this.txt_idx, cont, subtitle, e);
+                this.txt_idx++;
             }
         });
     }
 
-    setText = (index, container, subtitle, text) => {
+    setText = (idx, cont, subtitle, txt) => {
         this.Elt.item.push(document.createElement("div"));
-        this.Elt.item[index].className = "item";
+        this.Elt.item[idx].className = "item";
         this.Elt.text.push(document.createElement("div"));
-        this.Elt.text[index].className = "text";
-        this.Elt.text[index].innerHTML = text[0];
+        this.Elt.text[idx].className = "text";
+        this.Elt.text[idx].innerHTML = txt[0];
         if (subtitle == undefined) {
-            this.Elt.text[index].className = "long_text";
-            if (container.id == "container_1" && index == textMuybridge.length - 1) this.Elt.text[index].style.fontWeight = "bolder";
-            container.appendChild(this.Elt.item[index]);
-            this.Elt.item[index].appendChild(this.Elt.text[index]);
-
+            this.Elt.text[idx].className = "long_text";
+            if (cont.id == "container_1" && idx == textMuybridge.length - 1) this.Elt.text[idx].style.fontWeight = "bolder"
+            cont.appendChild(this.Elt.item[idx]);
+            this.Elt.item[idx].appendChild(this.Elt.text[idx]);
         } else {
             this.Elt.subtitle.push(document.createElement("div"));
-            this.Elt.subtitle[index].className = "subtitle";
-            this.Elt.subtitle[index].innerHTML = subtitle[index];
-            container.appendChild(this.Elt.subtitle[index]);
-            this.Elt.subtitle[index].appendChild(this.Elt.item[index]);
+            this.Elt.subtitle[idx].className = "subtitle";
+            this.Elt.subtitle[idx].innerHTML = subtitle[idx];
+            cont.appendChild(this.Elt.subtitle[idx]);
+            this.Elt.subtitle[idx].appendChild(this.Elt.item[idx]);
             this.lines = [];
-            this.lines.push(document.createElement("div"))
+            this.lines.push(document.createElement("div"));
             this.lines[0].className = "subtitle_line";
-            this.Elt.item[index].appendChild(this.lines[0]);
-            this.Elt.item[index].appendChild(this.Elt.text[index]);
-            this.lines.push(document.createElement("div"))
+            this.Elt.item[idx].appendChild(this.lines[0])
+            this.Elt.item[idx].appendChild(this.Elt.text[idx]);
+            this.lines.push(document.createElement("div"));
             this.lines[1].className = "subtitle_line";
-            this.Elt.item[index].appendChild(this.lines[1]);
+            this.Elt.item[idx].appendChild(this.lines[1]);
             this.Elt.line.push(this.lines);
         }
     }
 
-    setKeyframes = () => {
-        this.Keyframes.line_height = [
-            {
-                lineHeight: "0"
-            },
-            {
-                lineHeight: "1.2"
-            }
-        ];
-        this.Keyframes.margin = [
-            {
-                margin: "0 0 0 0"
-            },
-            {
-                margin: "var(--textMargin) 0 var(--textMargin) 0"
-            }
-        ];
-        this.Keyframes.height = [
-            {
-                height: "0"
-            },
-            {
-                height: "var(--textMargin)"
-            }
-        ];
-        this.Keyframes.opacity = [
-            {
-                opacity: "0"
-            },
-            {
-                opacity: "1", offset: 0.02
-            },
-            {
-                opacity: "1"
-            }
-        ];
-    }
-
     setClick = () => {
         if (this.Elt.subtitle.length > 0) {
-            this.Elt.title.onpointerup = () => { this.runTitleAnimation() };
+            this.Elt.title.forEach(e => {
+                e.onpointerup = () => { this.runTitleAnim() };
+            });
             this.Elt.title_line.forEach(e => {
-                e.onpointerup = () => { this.runTitleAnimation() };
+                e.onpointerup = () => { this.runTitleAnim() };
             });
             this.Elt.subtitle.forEach((e, i) => {
-                e.onpointerup = () => { this.runTextAnimation(i) };
+                e.onpointerup = () => { this.runTextAnim(i) };
             });
         } else {
-            this.Elt.title.onpointerup = () => {
-                this.Elt.item.forEach((e, i) => { this.runLongTextAnimation(i) });
-            };
+            this.Elt.title.forEach(e => {
+                e.onpointerup = () => {
+                    this.Elt.item.forEach((e, i) => { this.runLongTextAnim(i) });
+                };
+            });
             this.Elt.title_line.forEach(e => {
                 e.onpointerup = () => {
-                    this.Elt.item.forEach((f, j) => { this.runLongTextAnimation(j) });
+                    this.Elt.item.forEach((f, j) => { this.runLongTextAnim(j) });
                 }
             });
             this.Elt.item.forEach((e, i) => {
-                e.onpointerup = () => { this.runLongTextAnimation(i) };
+                e.onpointerup = () => { this.runLongTextAnim(i) };
             });
         }
     }
 
-    runTitleAnimation = () => {
+    runTitleAnim = () => {
         if (this.isOpen) {
-            this.Options.direction = "reverse";
+            this.Opt.direction = "reverse";
             this.Elt.subtitle.forEach(e => e.style.pointerEvents = "none");
         } else {
-            this.Options.direction = "normal";
+            this.Opt.direction = "normal";
             this.Elt.subtitle.forEach(e => e.style.pointerEvents = "all");
         }
         this.isOpen = !this.isOpen;
         if (this.Elt.scene.length > 0) {
             this.Elt.scene.forEach(e => {
-                e.animate(this.Keyframes.line_height, this.Options);
-                e.animate(this.Keyframes.margin, this.Options);
+                e.animate(this.Key_f.line_height, this.Opt);
+                e.animate(this.Key_f.margin, this.Opt);
             });
         }
         this.Elt.subtitle.forEach(e => {
-            e.animate(this.Keyframes.line_height, this.Options);
-            e.animate(this.Keyframes.margin, this.Options);
+            e.animate(this.Key_f.line_height, this.Opt);
+            e.animate(this.Key_f.margin, this.Opt);
         });
         this.Elt.line.forEach(e => {
-            e.forEach(f => {
-                f.animate(this.Keyframes.height, this.Options);
-            });
+            e.forEach(f => { f.animate(this.Key_f.height, this.Opt) });
         });
         this.Elt.text.forEach(e => {
-            this.style = window.getComputedStyle(e);
-            this.line_h = this.style.getPropertyValue("line-height");
+            this.st = window.getComputedStyle(e);
+            this.line_h = this.st.getPropertyValue("line-height");
             if (this.line_h != "0px") {
-                e.animate(this.Keyframes.line_height, this.Options);
-                e.animate(this.Keyframes.margin, this.Options);
-                e.animate(this.Keyframes.opacity, this.Options);
+                e.animate(this.Key_f.line_height, this.Opt);
+                e.animate(this.Key_f.margin, this.Opt);
+                e.animate(this.Key_f.opacity, this.Opt);
             }
         });
     }
 
-    runTextAnimation = (index) => {
-        this.style = window.getComputedStyle(this.Elt.text[index]);
-        this.line_h = this.style.getPropertyValue("line-height");
+    runTextAnim = (idx) => {
+        this.st = window.getComputedStyle(this.Elt.text[idx]);
+        this.line_h = this.st.getPropertyValue("line-height");
         if (this.line_h == "0px") {
-            this.Options.direction = "normal";
-            this.Elt.text[index].style.pointerEvents = "all";
+            this.Opt.direction = "normal";
+            this.Elt.text[idx].style.pointerEvents = "all";
         } else {
-            this.Options.direction = "reverse";
-            this.Elt.text[index].style.pointerEvents = "none";
+            this.Opt.direction = "reverse";
+            this.Elt.text[idx].style.pointerEvents = "none";
         }
-        this.Elt.text[index].animate(this.Keyframes.line_height, this.Options);
-        this.Elt.text[index].animate(this.Keyframes.margin, this.Options);
-        this.Elt.text[index].animate(this.Keyframes.opacity, this.Options);
+        this.Elt.text[idx].animate(this.Key_f.line_height, this.Opt);
+        this.Elt.text[idx].animate(this.Key_f.margin, this.Opt);
+        this.Elt.text[idx].animate(this.Key_f.opacity, this.Opt);
     }
 
-    runLongTextAnimation = (index) => {
-        this.style = window.getComputedStyle(this.Elt.text[index]);
-        this.line_h = this.style.getPropertyValue("line-height");
+    runLongTextAnim = (idx) => {
+        this.st = window.getComputedStyle(this.Elt.text[idx]);
+        this.line_h = this.st.getPropertyValue("line-height");
         this.Elt.text.forEach((e) => {
             if (this.line_h == "0px") {
-                this.Options.direction = "normal";
+                this.Opt.direction = "normal";
                 e.style.pointerEvents = "all";
             } else {
-                this.Options.direction = "reverse";
+                this.Opt.direction = "reverse";
                 e.style.pointerEvents = "none";
             }
-            e.animate(this.Keyframes.line_height, this.Options);
-            e.animate(this.Keyframes.margin, this.Options);
-            e.animate(this.Keyframes.opacity, this.Options);
+            e.animate(this.Key_f.line_height, this.Opt);
+            e.animate(this.Key_f.margin, this.Opt);
+            e.animate(this.Key_f.opacity, this.Opt);
         });
     }
 }
@@ -280,4 +238,5 @@ class SetText {
 //##########################################################################//
 //||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||//
 
-const set_content = new SetContent();
+TextF.initMuybridge();
+TextF.setCont();

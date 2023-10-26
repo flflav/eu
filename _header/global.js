@@ -1,15 +1,3 @@
-const Header = {
-    current_page: undefined,
-    header_direction: undefined,
-    header_closed: undefined
-}
-
-function removeLogo() {
-    setTimeout(() => {
-        document.getElementById("cover").style.display = "none";
-    }, 2000);
-}
-
 function randomInt(min, max) {
     return Math.floor(Math.random() * (max - min) + min);
 }
