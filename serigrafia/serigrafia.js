@@ -223,30 +223,33 @@ SeriF.clickCtg = () => {
 
 SeriF.openGal = (idx) => {
     Seri.gal_cover.style.display = "block";
-    let data_i = 0;
-    let load_imgs = setInterval(() => {
-        Seri.imgs[idx].push(document.createElement("img"));
-        Seri.imgs[idx][data_i].src = Data.paths[idx][data_i];
-        Seri.imgs[idx][data_i].onload = () => {
-            Seri.gal_cont.appendChild(Seri.imgs[idx][data_i]);
-            data_i++;
-            if (data_i == Data.paths[idx].length) {
-                clearInterval(load_imgs);
-                Seri.imgs.forEach((e, i) => {
-                    e.forEach((f, j) => {
-                        f.onpointerup = () => {
-                            SeriF.openZoom(f, i, j);
-                        }
-                    });
-                });
-            }
-        };
-    }, 100);
+    SeriF.loadImg(idx, 0);
     Seri.gal_cover.onpointerup = () => {
         Seri.imgs[idx] = [];
         while (Seri.gal_cont.firstChild) Seri.gal_cont.removeChild(Seri.gal_cont.lastChild);
         Seri.gal_cover.style.display = "none";
     }
+}
+
+SeriF.loadImg = (idx, data_i) => {
+    if (data_i == Data.paths[idx].length) {
+        Seri.imgs.forEach((e, i) => {
+            e.forEach((f, j) => {
+                f.onpointerup = () => {
+                    SeriF.openZoom(f, i, j);
+                }
+            });
+        });
+    } else {
+        Seri.imgs[idx].push(document.createElement("img"));
+        Seri.imgs[idx][data_i].src = Data.paths[idx][data_i];
+        Seri.imgs[idx][data_i].onload = () => {
+            Seri.gal_cont.appendChild(Seri.imgs[idx][data_i]);
+            data_i++;
+            setTimeout(() => { SeriF.loadImg(idx, data_i) }, 100);
+        }
+    }
+    
 }
 
 //||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||//
